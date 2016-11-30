@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">Users</div>
+    <div class="admin-user__card">
+      <div class="user-name">derrick@ironyard.com</div>
+      <div class="button-box">
+        {{#link-to "admin.user.detail" class="btn"}}Details{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+    <div class="admin-user__card">
+      <div class="user-name">derrick@ironyard.com</div>
+      <div class="button-box">
+        {{#link-to "admin.user.detail" class="btn"}}Details{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+    <div class="admin-user__card">
+      <div class="user-name">derrick@ironyard.com</div>
+      <div class="button-box">
+        {{#link-to "admin.user.detail" class="btn"}}Details{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+  </div>
+  <div class="grid-right">{{outlet}}</div>
+</div>

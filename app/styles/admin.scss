@@ -1,0 +1,25 @@
+.admin-links {
+  display: flex;
+  justify-content: flex-start;
+  // padding: 1rem;
+  border: 1px solid black;
+  // border-bottom: 1px solid black;
+
+  & a {
+    padding: 1rem;
+    border-right: 1px solid black;
+  }
+}
+
+.grid {
+  display: flex;
+
+  &-left {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+}
+
+.admin-user__card {
+  border-top: 1px solid black;
+}
