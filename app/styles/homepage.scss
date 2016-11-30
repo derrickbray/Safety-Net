@@ -45,11 +45,13 @@
 
     &--text {
       position: absolute;
-      top: 17rem;
+      top: 18rem;
       left: 50%;
       transform: translate(-50%, -100%);
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      border: 1px solid black;
+      padding: 0.5rem 4rem;
     }
   }
 }
