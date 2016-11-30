@@ -15,11 +15,23 @@
   display: flex;
 
   &-left {
+    flex-basis: 25%;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    border-bottom: 1px solid black;
   }
 }
 
-.admin-user__card {
+.admin__title {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.admin-side__card {
   border-top: 1px solid black;
+}
+
+.user-name {
+  text-align: center;
 }
