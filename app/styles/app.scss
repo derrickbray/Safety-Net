@@ -2,8 +2,12 @@ $c-primary: blue;
 $c-secondary: blue;
 $c-emergency: rgba(207, 65, 65, 1.0);
 $c-text: rgba(255, 255, 255, 1.0);
+$c-text-secondary: rgba(169, 171, 173, 1.0);
+$c-text-tirshary: rgba(0, 0, 0, 1.0);
 
 
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome/scss/font-awesome';
 @import 'reset';
