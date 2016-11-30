@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="admin-page">
+  <div class="admin-nav">
+    <div class="admin-links">
+      {{#link-to "admin.category"}}Categories{{/link-to}}
+      {{#link-to "admin.pledge"}}Pledges{{/link-to}}
+      {{#link-to "admin.resources"}}Resources{{/link-to}}
+      {{#link-to "admin.user"}}Users{{/link-to}}
+    </div>
+  </div>
+  {{outlet}}
+</div>
