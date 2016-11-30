@@ -2,11 +2,16 @@
   display: flex;
   justify-content: space-between;
   margin: 1rem;
+  color: $c-text-secondary;
 
   &-left {
 
     a {
-      text-decoration: none;
+    &:hover {
+      color: $c-text-tirshary;
+      border-bottom: 1px solid $c-emergency;
+      transition: border-bottom 500ms;
+    }
 
     }
   }
@@ -14,13 +19,13 @@
   &-right {
     display: flex;
     padding: 1rem;
-    list-style: none;
+
 
     a {
       margin: 1rem;
 
       &:hover {
-      // color: $c-emergency;
+      color: $c-text-tirshary;
       border-bottom: 1px solid $c-emergency;
       transition: border-bottom 500ms;
       }
@@ -37,7 +42,7 @@
     a {
 
       &:hover {
-
+      border: 0;
       }
     }
   }
