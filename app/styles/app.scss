@@ -1,0 +1,53 @@
+$c-primary: blue;
+$c-secondary: blue;
+$c-emergency: rgba(207, 65, 65, 1.0);
+$c-text: rgba(255, 255, 255, 1.0);
+
+
+
+@import 'reset';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+
+  &-left {
+
+    a {
+      text-decoration: none;
+
+    }
+  }
+
+  &-right {
+    display: flex;
+    padding: 1rem;
+    list-style: none;
+
+    a {
+      margin: 1rem;
+
+      &:hover {
+      // color: $c-emergency;
+      border-bottom: 1px solid $c-emergency;
+      transition: border-bottom 500ms;
+      }
+    }
+  }
+
+  &-er--button {
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+    padding: 0.5rem;
+    margin-top: -0.5rem;
+    background: $c-emergency;
+    color:$c-text;
+
+    a {
+
+      &:hover {
+
+      }
+    }
+  }
+}
