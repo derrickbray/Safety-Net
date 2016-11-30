@@ -55,3 +55,34 @@
     }
   }
 }
+
+.localcommunity {
+      height: 80vh;
+
+  &-nonprofit {
+    color: $c-emergency;
+
+  }
+  &-posted {
+    color: gray;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-card {
+    display: flex;
+    justify-content: center;
+
+    &--content {
+      padding: 0.5rem;
+    }
+  }
+
+  &-right {
+    display: flex;
+  justify-content: flex-end;
+  }
+}
