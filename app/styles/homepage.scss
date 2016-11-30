@@ -13,16 +13,18 @@
   left: 50%;
   transform: translate(-50%, -100%);
   color: $c-text;
+  font-size: 1.5rem;
   }
 
   &-button {
     position: absolute;
-    top: 14rem;
+    top: 15rem;
     left: 50%;
     transform: translate(-50%, -100%);
     background: $c-text;
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
-    padding: 0.5rem;
+    padding: 1rem;
+    color: $c-text-secondary;
   }
 }
 
@@ -39,6 +41,7 @@
     transform: translate(-50%, -100%);
     text-align: center;
     font-size: 1.5rem;
+    color: $c-text-secondary;
   }
 
   &-dropdown {
@@ -50,8 +53,9 @@
       transform: translate(-50%, -100%);
       text-align: center;
       font-size: 1.3rem;
-      border: 1px solid black;
+      border: 1px solid $c-text-secondary;
       padding: 0.5rem 4rem;
+      color: $c-text-secondary;
     }
   }
 }
@@ -70,6 +74,7 @@
   &-header {
     display: flex;
     justify-content: center;
+    color: $c-text-secondary;
   }
 
   &-card {
@@ -82,7 +87,8 @@
   }
 
   &-right {
-    display: flex;
+  display: flex;
   justify-content: flex-end;
+  color: $c-text-secondary;
   }
 }
