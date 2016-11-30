@@ -1,11 +1,10 @@
-<div class="admin-page">
-  <div class="admin-nav">
+
+  <div class="admin-page">
     <div class="admin-links">
-      {{#link-to "admin.category"}}Categories{{/link-to}}
+      {{#link-to "admin.user"}}Users{{/link-to}}
       {{#link-to "admin.pledge"}}Pledges{{/link-to}}
       {{#link-to "admin.resources"}}Resources{{/link-to}}
-      {{#link-to "admin.user"}}Users{{/link-to}}
+      {{#link-to "admin.category"}}Categories{{/link-to}}
     </div>
+    {{outlet}}
   </div>
-  {{outlet}}
-</div>

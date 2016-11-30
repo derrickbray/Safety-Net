@@ -18,15 +18,15 @@ Router.map(function() {
       this.route('edit');
     });
     this.route('user', function() {
+      this.route('detail');
+      this.route('edit');
+    });
+    this.route('pledge', function() {
       this.route('create');
       this.route('edit');
-      this.route('pledge', function() {
-        this.route('create');
-        this.route('edit');
-      });
     });
     this.route('resources', function() {
-      this.route('create');
+      this.route('detail');
       this.route('edit');
     });
     this.route('category', function() {

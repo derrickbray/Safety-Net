@@ -1,0 +1,37 @@
+.admin-links {
+  display: flex;
+  justify-content: flex-start;
+  // padding: 1rem;
+  border: 1px solid black;
+  // border-bottom: 1px solid black;
+
+  & a {
+    padding: 1rem;
+    border-right: 1px solid black;
+  }
+}
+
+.grid {
+  display: flex;
+
+  &-left {
+    flex-basis: 25%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}
+
+.admin__title {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.admin-side__card {
+  border-top: 1px solid black;
+}
+
+.user-name {
+  text-align: center;
+}
