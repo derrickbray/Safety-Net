@@ -1,1 +1,16 @@
 {{outlet}}
+<div class="container">
+  <div class="card-page">
+    <div class="card">
+      <div class="card__title">Login</div>
+      {{#simple-form class="card__form" onsubmit=(action "checkForm") as | formValues |}}
+        {{input class="form__input" type="text" required=true value=formValues.email placeholder="E-Mail"}}
+        {{input class="form__input" type="text" required=true value=formValues.password placeholder="Password"}}
+      {{/simple-form}}
+      <div class="button-box">
+        {{#link-to "sign-up"}}Register Your Non-Profit{{/link-to}}
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
