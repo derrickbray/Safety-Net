@@ -1,3 +1,57 @@
-.image-hero {
-  width: 100%;
+.hero {
+  position: relative;
+
+  &-image {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+  &-text {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: $c-text;
+  }
+
+  &-button {
+    position: absolute;
+    top: 14rem;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background: $c-text;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+    padding: 0.5rem;
+  }
+}
+
+.category {
+  position: relative;
+  padding: 1rem;
+  height: 80vh;
+
+  &-header {
+    width: 75%;
+    position: absolute;
+    top: 14rem;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  &-dropdown {
+
+    &--text {
+      position: absolute;
+      top: 18rem;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      text-align: center;
+      font-size: 1.3rem;
+      border: 1px solid black;
+      padding: 0.5rem 4rem;
+    }
+  }
 }
