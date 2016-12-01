@@ -24,6 +24,8 @@ Router.map(function() {
     this.route('pledge', function() {
       this.route('create');
       this.route('edit');
+      this.route('display');
+      this.route('detail');
     });
     this.route('resources', function() {
       this.route('detail');

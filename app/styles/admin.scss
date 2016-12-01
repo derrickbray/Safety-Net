@@ -1,14 +1,25 @@
 .admin-links {
   display: flex;
   justify-content: flex-start;
-  // padding: 1rem;
-  border: 1px solid black;
-  // border-bottom: 1px solid black;
+  background: #ECEFF1;
 
   & a {
+    margin-left: 0.5rem;
     padding: 1rem;
-    border-right: 1px solid black;
+    background: $c-primary;
+    color: $c-text;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+
+    &:active {
+      transform: translate(1px, 1px);
+    }
   }
+}
+
+.admin__content {
+  padding: 1rem;
+  background: #ECEFF1;
+  height: 100vh;
 }
 
 .grid {
@@ -16,22 +27,72 @@
 
   &-left {
     flex-basis: 25%;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    margin-top: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+  }
+  &-right {
+    flex-grow: 1;
   }
 }
 
 .admin__title {
   padding: 1rem;
   text-align: center;
+  background: $c-primary;
+  color: $c-text;
   font-size: 1.5rem;
 }
 
 .admin-side__card {
-  border-top: 1px solid black;
+  background: white;
+  border-top: 1px solid $c-primary;
 }
 
 .user-name {
   text-align: center;
+}
+
+.detail-card {
+  width: 50%;
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+
+  &__title {
+    padding: 1rem;
+    background: $c-primary;
+    color: $c-text;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.user-info {
+  padding: 0.3rem;
+  margin: 0.2rem;
+}
+
+.category__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  border-top: 1px solid black;
+}
+
+.category__link {
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  &-full {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: $c-primary;
+  }
+}
+
+.danger {
+  background: $c-emergency;
 }
