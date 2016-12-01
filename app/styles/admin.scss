@@ -1,9 +1,7 @@
 .admin-links {
   display: flex;
   justify-content: flex-start;
-  // padding: 1rem;
   border: 1px solid black;
-  // border-bottom: 1px solid black;
 
   & a {
     padding: 1rem;
@@ -20,6 +18,9 @@
     border-right: 1px solid black;
     border-bottom: 1px solid black;
   }
+  &-right {
+    flex-grow: 1;
+  }
 }
 
 .admin__title {
@@ -34,4 +35,20 @@
 
 .user-name {
   text-align: center;
+}
+
+.detail-card {
+  width: 50%;
+  margin: 2rem auto;
+  border: 1px solid black;
+
+  &__title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.user-info {
+  padding: 0.3rem;
+  margin: 0.2rem;
 }

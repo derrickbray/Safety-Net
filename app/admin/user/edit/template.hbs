@@ -1,2 +1,17 @@
 {{outlet}}
-hello
+<div class="detail">
+  <div class="detail-card">
+    <div class="detail-card__title">Edit Details</div>
+    {{#simple-form class="card__form" onsubmit=(action "updateForm") as | formValues |}}
+      {{input class="form__input" type="text" required=true value=formValues.name placeholder="Organization Name"}}
+      {{input class="form__input" type="text" required=true value=formValues.address placeholder="Address"}}
+      {{input class="form__input" type="text"required=true value=formValues.phone placeholder="Phone #"}}
+      {{input class="form__input" type="text" required=true value=formValues.website placeholder="Website"}}
+      {{input class="form__input" type="text" required=true value=formValues.email placeholder="E-Mail"}}
+      {{input class="form__input" type="text" required=true value=formValues.password placeholder="Password"}}
+    {{/simple-form}}
+    <div class="button-box">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </div>
+</div>
