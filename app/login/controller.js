@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    checkForm() {},
+    checkForm() {
+      this.transitionToRoute('user.pledge');
+    },
   }
 });
