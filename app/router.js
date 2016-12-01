@@ -13,6 +13,14 @@ Router.map(function() {
   this.route('resources', function() {
     this.route('er');
   });
+
+  this.route('user', function() {
+    this.route('pledge', function() {
+      this.route('create');
+      this.route('edit');
+    });
+  });
+
   this.route('admin', function() {
     this.route('pledge', function() {
       this.route('edit');
@@ -22,9 +30,7 @@ Router.map(function() {
       this.route('edit');
     });
     this.route('pledge', function() {
-      this.route('create');
       this.route('edit');
-      this.route('display');
       this.route('detail');
     });
     this.route('resources', function() {
