@@ -10,11 +10,11 @@
         {{input class="form__input" type="text" required=true value=formValues.website placeholder="Website"}}
         {{input class="form__input" type="text" required=true value=formValues.email placeholder="E-Mail"}}
         {{input class="form__input" type="text" required=true value=formValues.password placeholder="Password"}}
+        <div class="button-box">
+          {{#link-to "login"}}Already Have an Account?{{/link-to}}
+          <button type="submit" class="btn">Submit</button>
+        </div>
       {{/simple-form}}
-      <div class="button-box">
-        {{#link-to "login"}}Already Have an Account?{{/link-to}}
-        <button type="submit" class="btn">Submit</button>
-      </div>
     </div>
   </div>
 </div>
