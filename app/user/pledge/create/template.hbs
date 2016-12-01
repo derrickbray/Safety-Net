@@ -5,9 +5,9 @@
     {{#simple-form class="card__form" onsubmit=(action "addPledge") as | formValues |}}
       {{input class="form__input" type="text" required=true value=formValues.pledge placeholder="Pledge"}}
       {{input class="form__input" type="text" required=true value=formValues.date placeholder="End Date"}}
+      <div class="button-box">
+        <button type="submit" class="btn">Pledge</button>
+      </div>
     {{/simple-form}}
-    <div class="button-box">
-      <button type="submit" class="btn">Pledge</button>
-    </div>
   </div>
 </div>
