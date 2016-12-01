@@ -1,1 +1,18 @@
-{{outlet}}
+
+<div class="detail">
+  <div class="detail-card">
+    <div class="detail-card__title">Edit Resource Infomation</div>
+
+    {{#simple-form class="card__form" onsubmit=(action "updateResource") as | formValues |}}
+      {{input class="form__input" type="text" required=true value=formValues.type placeholder="Category"}}
+      {{input class="form__input" type="text" required=true value=formValues.contact placeholder="Resource"}}
+      {{input class="form__input" type="text" required=true value=formValues.phone placeholder="Phone #"}}
+      {{input class="form__input" type="text" required=true value=formValues.notes placeholder="Notes"}}
+      {{input class="form__input" type="text" required=true value=formValues.website placeholder="Website"}}
+      {{input class="form__input" type="text" required=true value=formValues.location1 placeholder="Address"}}
+    {{/simple-form}}
+    <div class="button-box">
+      <button type="submit" class="btn">Update</button>
+    </div>
+  </div>
+</div>
