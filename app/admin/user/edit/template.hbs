@@ -3,11 +3,17 @@
   <div class="detail-card">
     <div class="detail-card__title">Edit Details</div>
     {{#simple-form class="card__form" onsubmit=(action "updateForm") as | formValues |}}
+      <div class="pledge-detail user-info">Organization Name</div>
       {{input class="form__input" type="text" required=true value=formValues.name placeholder="Organization Name"}}
+      <div class="pledge-detail user-info">Address</div>
       {{input class="form__input" type="text" required=true value=formValues.address placeholder="Address"}}
+      <div class="pledge-detail user-info">Phone #</div>
       {{input class="form__input" type="text"required=true value=formValues.phone placeholder="Phone #"}}
+      <div class="pledge-detail user-info">Website</div>
       {{input class="form__input" type="text" required=true value=formValues.website placeholder="Website"}}
+      <div class="pledge-detail user-info">E-Mail</div>
       {{input class="form__input" type="text" required=true value=formValues.email placeholder="E-Mail"}}
+      <div class="pledge-detail user-info">Password</div>
       {{input class="form__input" type="text" required=true value=formValues.password placeholder="Password"}}
     {{/simple-form}}
     <div class="button-box">
