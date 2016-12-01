@@ -1,13 +1,17 @@
 .app {
   display: flex;
+  justify-content: center;
   margin: 1rem;
   flex-wrap: wrap;
 }
 
 .sidebar {
+  flex-basis: calc(30%);
+  min-width: 16rem;
   padding: 1rem;
-  border-right: 1px solid $c-text-secondary;
   color: $c-text-secondary;
+  flex-grow: 1;
+  text-align: center;
 
   &-header {
     margin: 1rem;
@@ -21,7 +25,6 @@
   &-primary {
     margin: 1rem 1rem -1rem 1rem;
     padding: 0.5rem;
-    text-align: left;
     color: $c-emergency;
   }
 
@@ -39,6 +42,7 @@
 }
 
 .main-content {
+  flex-basis: calc(70%);
   flex-grow: 1;
   color: $c-text-secondary;
 
@@ -56,8 +60,8 @@
     }
   }
 
-  &-image {
-    width: 75%;
-    object-fit: cover;
+  &--image {
+    width: 100%;
+    object-fit: contain;
   }
 }
