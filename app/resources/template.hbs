@@ -1,1 +1,24 @@
-{{outlet}}
+<div class="app">
+  <div class="sidebar">
+    <div class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
+    <h3 class="sidebar-header">Resources Near You</h3>
+  <div class="sidebar-card">
+    <h3 class="sidebar-primary">Primary Category</h3>
+    <h4 class="sidebar-secondary">Resource Name</h4>
+  </div>
+  </div>
+  <div class="main-content">
+    <div class="main-content--header">
+      <h3 class="main-content--header__text">Searching For</h3>
+      <h3 class="main-content--header__tag">Housing</h3>
+      <h3 class="main-content--header__tag">Clothing</h3>
+      <h3 class="main-content--header__tag">Food</h3>
+    </div>
+
+
+  {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{/leaflet-map}}
+</div>
+</div>
+    {{outlet}}
