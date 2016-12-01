@@ -1,1 +1,33 @@
-{{outlet}}
+<div class="new-pledge">{{#link-to "user.pledge.create" class="btn" }}New Pledge{{/link-to}}</div>
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">My Pledges</div>
+    <div class="admin-side__card">
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="user-pledge__end">Dec. 25 2016</div>
+      <div class="button-box">
+        {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Claimed</button>
+      </div>
+    </div>
+    <div class="admin-side__card">
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="user-pledge__end">Dec. 25 2016</div>
+      <div class="button-box">
+        {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Claimed</button>
+      </div>
+    </div>
+    <div class="admin-side__card">
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="user-pledge__end">Dec. 25 2016</div>
+      <div class="button-box">
+        {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Claimed</button>
+      </div>
+    </div>
+  </div>
+  <div class="grid-right">
+    {{outlet}}
+  </div>
+</div>
