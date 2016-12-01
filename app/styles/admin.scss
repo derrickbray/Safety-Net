@@ -5,10 +5,15 @@
   // border: 1px solid black;
 
   & a {
+    margin-left: 0.5rem;
     padding: 1rem;
-    border-right: 1px solid $c-text;
     background: $c-primary;
     color: $c-text;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+
+    &:active {
+      margin-top: 0.2rem;
+    }
   }
 }
 
@@ -51,7 +56,6 @@
 .detail-card {
   width: 50%;
   margin: 2rem auto;
-  // border: 1px solid black;
   background: white;
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
 
@@ -77,10 +81,21 @@
 }
 
 .category__link {
+
+  &:active {
+    margin-top: 0.2rem;
+  }
+
   &-full {
     display: flex;
     justify-content: center;
     padding: 1rem;
     color: $c-primary;
+  }
+}
+
+.btn {
+  &:active {
+    margin-top: 0.2rem;
   }
 }
