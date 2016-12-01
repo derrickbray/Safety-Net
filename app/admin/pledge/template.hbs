@@ -1,2 +1,34 @@
-{{outlet}}
-pledge admin
+
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">Pledges</div>
+    <div class="admin-side__card">
+      <div class="user-org">Nash rescue mission</div>
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="button-box">
+        {{!-- {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}} --}}
+        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+    <div class="admin-side__card">
+      <div class="user-org">Nash rescue mission</div>
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="button-box">
+        {{!-- {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}} --}}
+        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+    <div class="admin-side__card">
+      <div class="user-org">Nash rescue mission</div>
+      <div class="user-pledge">20 cans of corn</div>
+      <div class="button-box">
+        {{!-- {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}} --}}
+        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+        <button type="submit" class="btn">Approve</button>
+      </div>
+    </div>
+  </div>
+  <div class="grid-right">{{outlet}}</div>
+</div>
