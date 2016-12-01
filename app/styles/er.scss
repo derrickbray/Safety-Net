@@ -1,0 +1,63 @@
+.app {
+  display: flex;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: 1px solid $c-text-secondary;
+  color: $c-text-secondary;
+
+  &-header {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  &-card {
+    border: 1px solid $c-text-secondary;
+  }
+
+  &-primary {
+    margin: 1rem 1rem -1rem 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    color: $c-emergency;
+  }
+
+  &-secondary {
+    margin: 1rem;
+    padding: 0 0.5rem;
+    color: $c-text-secondary;
+  }
+
+  &-dropdown {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid $c-text-secondary;
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+  color: $c-text-secondary;
+
+  &--header {
+  display: flex;
+
+
+  &__text {
+  padding: 0.5rem 1rem;
+  }
+
+    &__tag {
+    padding: 0.5rem 1rem;
+    border: 1px solid $c-text-secondary;
+    }
+  }
+
+  &-image {
+    width: 75%;
+    object-fit: cover;
+  }
+}

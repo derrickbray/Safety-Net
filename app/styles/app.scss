@@ -1,5 +1,5 @@
-$c-primary: blue;
-$c-secondary: blue;
+$c-primary: rgba(#0689a6,.72);
+$c-secondary: rgba(#881818,.62);
 $c-emergency: rgba(207, 65, 65, 1.0);
 $c-text: rgba(255, 255, 255, 1.0);
 $c-text-secondary: rgba(169, 171, 173, 1.0);
@@ -17,3 +17,4 @@ $c-text-tirshary: rgba(0, 0, 0, 1.0);
 @import 'login';
 @import 'admin';
 @import 'about';
+@import 'er';
