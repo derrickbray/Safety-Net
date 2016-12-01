@@ -32,11 +32,11 @@
 .btn {
   padding: 0.5rem;
   outline: none;
-  background: $c-primary;
+  background: $c-secondary;
   color: $c-text;
   border: 0;
 
   &:active {
-    margin-top: 0.2rem;
+    transform: translate(1px, 1px);
   }
 }

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: flex-start;
   background: #ECEFF1;
-  // border: 1px solid black;
 
   & a {
     margin-left: 0.5rem;
@@ -12,7 +11,7 @@
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
 
     &:active {
-      margin-top: 0.2rem;
+      transform: translate(1px, 1px);
     }
   }
 }
@@ -46,7 +45,7 @@
 
 .admin-side__card {
   background: white;
-  border-top: 1px solid #ECEFF1;
+  border-top: 1px solid $c-primary;
 }
 
 .user-name {
@@ -83,7 +82,7 @@
 .category__link {
 
   &:active {
-    margin-top: 0.2rem;
+    transform: translate(1px, 1px);
   }
 
   &-full {
@@ -92,4 +91,8 @@
     padding: 1rem;
     color: $c-primary;
   }
+}
+
+.danger {
+  background: $c-emergency;
 }
