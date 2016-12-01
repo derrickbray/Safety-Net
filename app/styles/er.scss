@@ -35,6 +35,8 @@
   }
 
   &-dropdown {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     padding: 1rem;
     border: 1px solid $c-text-secondary;
@@ -64,4 +66,9 @@
     width: 100%;
     object-fit: contain;
   }
+}
+
+
+.leaflet-container {
+  height: 70vh;
 }
