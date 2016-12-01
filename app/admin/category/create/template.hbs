@@ -4,9 +4,9 @@
     <div class="detail-card__title">Add a Category</div>
     {{#simple-form class="card__form" onsubmit=(action "addCategory") as | formValues |}}
       {{input class="form__input" type="text" required=true value=formValues.name placeholder="Add a Category"}}
+      <div class="button-box">
+        <button type="submit" class="btn">Add</button>
+      </div>
     {{/simple-form}}
-    <div class="button-box">
-      <button type="submit" class="btn">Add</button>
-    </div>
   </div>
 </div>
