@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
         lng: position.coords.longitude,
       });
 
-      console.log(this.getProperties('lat', 'lng'))
+      console.log(this.getProperties('lat', 'lng'));
     });
   },
   lat: 36.1526986,
