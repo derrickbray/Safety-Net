@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  session: Ember.inject.service(),
   actions: {
     saveForm(formValues) {
       console.log(formValues);
@@ -8,8 +9,19 @@ export default Ember.Controller.extend({
       const user = this.store.createRecord('user', formValues);
 
       user.save().then(() => {
-        // return this.transitionToRoute('user.pledge');;
-      });
+        const secretStuff = {
+          identification: formValues.email,
+          password: formValues.password,
+        };
+        const authenticator = 'authenticator:jwt';
+
+        this.get('session').authenticate(authenticator, secretStuff).then(() => {
+          this.transitionToRoute('user.pledge');
+        });
+      })
+      .catch(() => {
+        alert('Error Creating User');
+      })
     },
   }
 });
