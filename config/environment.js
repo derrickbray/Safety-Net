@@ -2,6 +2,11 @@
 
 module.exports = function(environment) {
   var ENV = {
+    // apiUrl: 'https://frozen-cove-87138.herokuapp.com/menu-categories',
+    // DS: {
+    //   host: 'https://frozen-cove-87138.herokuapp.com',
+    // },
+
     modulePrefix: 'safety-net',
     environment: environment,
     rootURL: '/',
