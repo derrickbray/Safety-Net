@@ -20,6 +20,9 @@ export default Ember.Controller.extend({
       let center = e.target.getCenter();
       this.set('lat', center.lat);
       this.set('lng', center.lng);
-    }
+    },
+    showDropdown() {
+
+    },
   }
 });
