@@ -1,6 +1,10 @@
 <div class="app">
   <div class="sidebar">
     <div class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
+      <div class="sidebar-dropdown">Housing</div>
+      <div class="sidebar-dropdown">Food</div>
+      <div class="sidebar-dropdown">Clothing</div>
+
     <h3 class="sidebar-header">Resources Near You</h3>
   <div class="sidebar-card">
     <h3 class="sidebar-primary">Primary Category</h3>
@@ -18,5 +22,7 @@
   {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
     {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{/leaflet-map}}
+
+  {{outlet}}
 </div>
 </div>
