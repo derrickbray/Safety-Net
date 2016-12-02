@@ -49,21 +49,16 @@
 
     &--text {
       position: absolute;
-      top: 18rem;
+      top: 19rem;
       left: 50%;
       transform: translate(-50%, -100%);
-      text-align: center;
-      font-size: 1.3rem;
+      font-size: 2rem;
       border: 1px solid $c-text-secondary;
-      padding: 1rem 4rem;
       color: $c-text-secondary;
     }
   }
 }
 
-option {
-  padding: 5rem;
-}
 
 .localcommunity {
       height: 80vh;
