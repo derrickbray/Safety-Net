@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('pledge', function() {
       this.route('create');
       this.route('edit');
+      this.route('old');
     });
   });
 
@@ -28,6 +29,9 @@ Router.map(function() {
     this.route('user', function() {
       this.route('detail');
       this.route('edit');
+
+      this.route('pledge', function() {
+      });
     });
     this.route('pledge', function() {
       this.route('edit');
