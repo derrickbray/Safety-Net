@@ -14,8 +14,11 @@ Router.map(function() {
     this.route('er');
   });
 
+  // this.route('detail', { path: '/:id' });
+  // this.route('new-item', { path: '/:id/new-item' });
+
   this.route('user', function() {
-    this.route('pledge', function() {
+    this.route('pledge', { path: '/:id'}, function() {
       this.route('create');
       this.route('edit');
       this.route('old');
