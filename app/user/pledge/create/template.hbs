@@ -1,7 +1,7 @@
 {{outlet}}
 <div class="detail">
   <div class="detail-card">
-    <div class="detail-card__title">Make a Pledge</div>
+    <div class="detail-card__title">Make a New Pledge</div>
     {{#simple-form class="card__form" onsubmit=(action "addPledge") as | formValues |}}
       {{input class="form__input" type="text" required=true value=formValues.name placeholder="Title"}}
       {{input class="form__input" type="text" required=true value=formValues.description placeholder="Description"}}
