@@ -14,6 +14,9 @@ Router.map(function() {
     this.route('er');
   });
 
+  // this.route('detail', { path: '/:id' });
+  // this.route('new-item', { path: '/:id/new-item' });
+
   this.route('user', function() {
     this.route('pledge', function() {
       this.route('create');
@@ -35,7 +38,7 @@ Router.map(function() {
     });
     this.route('pledge', function() {
       this.route('edit');
-      this.route('detail');
+      this.route('detail', { path: '/:id'});
     });
     this.route('resources', function() {
       this.route('detail');

@@ -15,13 +15,14 @@ export default Ember.Controller.extend({
         };
         const authenticator = 'authenticator:jwt';
 
-        this.get('session').authenticate(authenticator, secretStuff).then(() => {
+        this.get('session').authenticate(authenticator, secretStuff)
+          .then(() => {
           this.transitionToRoute('user.pledge');
         });
       })
       .catch(() => {
         alert('Error Creating User');
-      })
+      });
     },
   }
 });
