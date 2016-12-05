@@ -49,6 +49,7 @@ Router.map(function() {
       this.route('edit');
     });
   });
+  this.route('logout');
 });
 
 export default Router;
