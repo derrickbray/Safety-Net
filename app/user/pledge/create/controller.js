@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
         // debugger;
         pledge.save()
         .then(() => {
-          alert('Your pledge was sent for approval!');
+        alert('Your pledge was sent for approval!');
 
           this.transitionToRoute('user.pledge');
         });
