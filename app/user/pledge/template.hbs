@@ -1,46 +1,29 @@
 <div class="container">
 
-  <div class="hello">Hello {{user.orgName}}, Manage Your Account</div>
+  <div class="hello">Hello {{ currentUser.user.email }}, Manage Your Account</div>
 
   <div class="grid">
     <div class="grid-left">
+
       <div class="admin__title">Do stuff</div>
       {{#link-to "user.pledge.create" class="category__link-full" }}Make a New Pledge ->{{/link-to}}
       {{#link-to "user.pledge.old" class="category__link-full" }}See My Old Pledges ->{{/link-to}}
       <div class="admin__title">My Current Pledges</div>
 
-      {{#each item as |pledge|}}
-
+      {{#each model as |pledge|}}
         <div class="admin-side__card">
-          <div class="user-pledge">20 cans of corn</div>
-          <div class="user-pledge__end">Dec. 25 2016</div>
+          <div class="user-pledge">{{pledge.name}}</div>
+          <div class="user-pledge">{{pledge.description}}</div>
+          <div class="user-pledge__end">{{pledge.endDate}}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
-            {{#simple-form onsubmit=(action "isClaimed") as | formValues |}}
-              <button type="submit" class="btn">Claimed</button>
-            {{/simple-form}}
+            <button type="submit" class="btn">Claimed</button>
           </div>
         </div>
-
       {{/each}}
 
-      <div class="admin-side__card">
-        <div class="user-pledge">20 cans of corn</div>
-        <div class="user-pledge__end">Dec. 25 2016</div>
-        <div class="button-box">
-          {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
-          <button type="submit" class="btn">Claimed</button>
-        </div>
-      </div>
-      <div class="admin-side__card">
-        <div class="user-pledge">20 cans of corn</div>
-        <div class="user-pledge__end">Dec. 25 2016</div>
-        <div class="button-box">
-          {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
-          <button type="submit" class="btn">Claimed</button>
-        </div>
-      </div>
     </div>
+
     <div class="grid-right">
       {{outlet}}
     </div>

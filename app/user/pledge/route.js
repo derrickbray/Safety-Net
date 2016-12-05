@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  currentUser: Ember.inject.service(),
+
   model() {
-    return this.store.findAll('user');
+    return this.store.query('pledge', {
+      mine: true,
+    });
   },
 });
