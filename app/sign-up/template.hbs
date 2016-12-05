@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card__title">Register Your Non-Profit</div>
       {{#simple-form class="card__form" onsubmit=(action "saveForm") as | formValues |}}
-        {{input class="form__input" type="text"  value=formValues.orgName placeholder="Organization Name"}}
+        {{input class="form__input" type="text"  value=formValues.name placeholder="Organization Name"}}
         {{input class="form__input" type="text"  value=formValues.address placeholder="Address"}}
         {{input class="form__input" type="text"  value=formValues.phone placeholder="Phone #"}}
         {{input class="form__input" type="text"  value=formValues.website placeholder="Website"}}
