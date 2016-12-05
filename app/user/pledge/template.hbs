@@ -8,13 +8,16 @@
       <div class="admin__title">Do stuff</div>
       {{#link-to "user.pledge.create" class="category__link-full" }}Make a New Pledge ->{{/link-to}}
       {{#link-to "user.pledge.old" class="category__link-full" }}See My Old Pledges ->{{/link-to}}
+      {{#link-to "logout" class="category__link-full" }}Logout ->{{/link-to}}
+
       <div class="admin__title">My Current Pledges</div>
 
       {{#each model as |pledge|}}
         <div class="admin-side__card">
-          <div class="user-pledge">{{pledge.name}}</div>
-          <div class="user-pledge">{{pledge.description}}</div>
-          <div class="user-pledge__end">{{pledge.endDate}}</div>
+          <div class="user-pledge">{{ pledge.name }}</div>
+          <div class="user-pledge">{{ user.pledge.description }}</div>
+          <div class="user-pledge">{{ currentUser.user.pledge.contactInfo }}</div>
+          <div class="user-pledge__end">{{ currentUser.user.pledge.duration }}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
             <button type="submit" class="btn">Claimed</button>
