@@ -1,15 +1,17 @@
 <div class="app">
   <div class="sidebar">
-    <div onclick={{action 'showDropdown'}} class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
+    <div onclick= {{action 'showDropdown'}} class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
 
     <h3 class="sidebar-header">Resources Near You</h3>
-  <div class="sidebar-card">
-    <h3 class="sidebar-primary">Free Javascript Crash Course</h3>
-    <h4 class="sidebar-secondary">Iron Yard Nashville</h4>
-  </div>
+    <div class="sidebar-card">
+        {{#each model as |organization|}}
+        <h3 class="sidebar-primary">{{ organization.name }}</h3>
+        <h4 class="sidebar-secondary">{{ organization.name }}</h4>
+        {{/each}}
+    </div>
   </div>
   <div class="main-content">
     <div class="main-content--header">
@@ -18,31 +20,26 @@
 
     </div>
 
-  <p><label>{{input type="checkbox" checked=nightMode}} Night mode</label></p>
-  {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
-    {{#if nightMode}}
-    {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
-    {{else}}
-    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-    {{/if}}
+    <p><label>{{input type="checkbox" checked=nightMode}} Night mode</label></p>
+    {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+      {{#if nightMode}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+      {{else}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+      {{/if}}
 
-    {{#marker-layer location=emberConfLocation}}
-  {{#popup-layer}}
-    <h3>Iron Yard Nashville</h3>
-    <h4>555-5555</h4>
-    613 Ewing Ave #200
-    Nashville, TN 37203
-  {{/popup-layer}}
-{{/marker-layer}}
+      {{#each model as |organization|}}
+        {{log organization.location}}
+        {{#marker-layer location=organization.location}}
+          {{#popup-layer}}
+          <h3>{{ organization.name }}</h3>
+          <h4>{{ organization.phone }}</h4> {{organization.address}}
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/each}}
 
-{{#marker-layer location=hotel}}
-  {{#popup-layer}}
-    <h3>Hotel</h3>
-  {{/popup-layer}}
-{{/marker-layer}}
+    {{/leaflet-map}}
 
-  {{/leaflet-map}}
-
-  {{outlet}}
-</div>
+    {{outlet}}
+  </div>
 </div>
