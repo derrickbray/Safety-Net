@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="hello">Hello {{user.orgName}}, Manage Your Account</div>
+  <div class="hello">Hello {{ currentUser }}, Manage Your Account</div>
 
   <div class="grid">
     <div class="grid-left">
@@ -12,8 +12,9 @@
       {{#each item as |pledge|}}
 
         <div class="admin-side__card">
-          <div class="user-pledge">20 cans of corn</div>
-          <div class="user-pledge__end">Dec. 25 2016</div>
+          <div class="user-pledge">{{pledge.name}}</div>
+          <div class="user-pledge">{{pledge.description}}</div>
+          <div class="user-pledge__end">{{pledge.endDate}}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
             {{#simple-form onsubmit=(action "isClaimed") as | formValues |}}
