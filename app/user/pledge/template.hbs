@@ -15,9 +15,9 @@
       {{#each model as |pledge|}}
         <div class="admin-side__card">
           <div class="user-pledge">{{ pledge.name }}</div>
-          <div class="user-pledge">{{ user.pledge.description }}</div>
-          <div class="user-pledge">{{ currentUser.user.pledge.contactInfo }}</div>
-          <div class="user-pledge__end">{{ currentUser.user.pledge.duration }}</div>
+          <div class="user-pledge">{{ pledge.description }}</div>
+          <div class="user-pledge">{{ pledge.contactInfo }}</div>
+          <div class="user-pledge__end">{{ pledge.duration }}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" class="btn" }}Edit{{/link-to}}
             <button type="submit" class="btn">Claimed</button>
