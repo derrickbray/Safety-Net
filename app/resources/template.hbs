@@ -7,8 +7,8 @@
 
     <h3 class="sidebar-header">Resources Near You</h3>
   <div class="sidebar-card">
-    <h3 class="sidebar-primary">Primary Category</h3>
-    <h4 class="sidebar-secondary">Resource Name</h4>
+    <h3 class="sidebar-primary">Free Javascript Crash Course</h3>
+    <h4 class="sidebar-secondary">Iron Yard Nashville</h4>
   </div>
   </div>
   <div class="main-content">
@@ -18,9 +18,29 @@
 
     </div>
 
-
+  <p><label>{{input type="checkbox" checked=nightMode}} Night mode</label></p>
   {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+    {{#if nightMode}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+    {{else}}
     {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+    {{/if}}
+
+    {{#marker-layer location=emberConfLocation}}
+  {{#popup-layer}}
+    <h3>Iron Yard Nashville</h3>
+    <h4>555-5555</h4>
+    613 Ewing Ave #200
+    Nashville, TN 37203
+  {{/popup-layer}}
+{{/marker-layer}}
+
+{{#marker-layer location=hotel}}
+  {{#popup-layer}}
+    <h3>Hotel</h3>
+  {{/popup-layer}}
+{{/marker-layer}}
+
   {{/leaflet-map}}
 
   {{outlet}}

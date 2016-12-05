@@ -14,6 +14,8 @@ export default Ember.Controller.extend({
   lat: 36.1526986,
   lng: -86.7761604,
   zoom: 10,
+  emberConfLocation: [36.1526986, -86.7761604],
+  hotel: [36.1526986, -86.8061604],
 
   actions: {
     updateCenter(e) {
