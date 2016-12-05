@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
       const user = this.store.createRecord('user', formValues);
 
       user.save().then(() => {
+        const org = this.store.createRecord('organization', formValues);
+        org.set('user', user);
+
+        return org.save();
+      }).then(() => {
         const secretStuff = {
           identification: formValues.email,
           password: formValues.password,
