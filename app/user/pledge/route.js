@@ -4,6 +4,8 @@ export default Ember.Route.extend({
   currentUser: Ember.inject.service(),
 
   model() {
-    return this.get('currentUser.user');
+    return this.store.query('pledge', {
+      mine: true,
+    });
   },
 });
