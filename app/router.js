@@ -30,7 +30,7 @@ Router.map(function() {
       this.route('edit');
     });
     this.route('user', function() {
-      this.route('detail');
+      this.route('detail', {path: '/:user_id'});
       this.route('edit');
 
       this.route('pledge', function() {

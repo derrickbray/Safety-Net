@@ -5,5 +5,6 @@ export default DS.Model.extend({
   password: DS.attr('string'),
   pledge: DS.hasMany('pledge'),
   isAdmin: DS.attr('boolean'),
-  isApproved: DS.attr('boolean')
+  isApproved: DS.attr('boolean'),
+  organization: DS.belongsTo('organization'),
 });
