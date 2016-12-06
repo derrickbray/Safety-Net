@@ -2,12 +2,12 @@
 <div class="detail">
   <div class="detail-card">
     <div class="detail-card__title">{{ model.organization.name }}</div>
+    <div class="user-address user-info">User Email {{ model.email }}</div>
     <div class="user-org user-info">Website: {{ model.organization.website }}</div>
     <div class="user-org user-info">Address: {{ model.organization.address }}</div>
     <div class="user-org user-info">Phone# {{ model.organization.phone }}</div>
     <div class="user-address user-info">Admin Status {{ model.isAdmin }}</div>
     <div class="user-address user-info">Approval Status {{ model.isApproved }}</div>
-    <div class="user-address user-info">User Associated with the Organization {{ model.email }}</div>
     {{!-- <div class="user-phone user-info">1234567890</div> --}}
     <a href="#" class="user-website user-info">{{user.website}}</a>
     <div class="button-box">
