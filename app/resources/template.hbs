@@ -1,15 +1,17 @@
 <div class="app">
   <div class="sidebar">
-    <div onclick={{action 'showDropdown'}} class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
+    <div onclick= {{action 'showDropdown'}} class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
+    <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
 
     <h3 class="sidebar-header">Resources Near You</h3>
-  <div class="sidebar-card">
-    <h3 class="sidebar-primary">Primary Category</h3>
-    <h4 class="sidebar-secondary">Resource Name</h4>
-  </div>
+    <div class="sidebar-card">
+        {{#each model as |organization|}}
+        <h3 class="sidebar-primary">{{ organization.name }}</h3>
+        <h4 class="sidebar-secondary">{{ organization.name }}</h4>
+        {{/each}}
+    </div>
   </div>
   <div class="main-content">
     <div class="main-content--header">
@@ -18,11 +20,26 @@
 
     </div>
 
+    <p><label>{{input type="checkbox" checked=nightMode}} Night mode</label></p>
+    {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+      {{#if nightMode}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+      {{else}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+      {{/if}}
 
-  {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
-    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-  {{/leaflet-map}}
+      {{#each model as |organization|}}
+        {{log organization.location}}
+        {{#marker-layer location=organization.location}}
+          {{#popup-layer}}
+          <h3>{{ organization.name }}</h3>
+          <h4>{{ organization.phone }}</h4> {{organization.address}}
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/each}}
 
-  {{outlet}}
-</div>
+    {{/leaflet-map}}
+
+    {{outlet}}
+  </div>
 </div>
