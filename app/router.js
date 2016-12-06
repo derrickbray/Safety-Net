@@ -20,7 +20,7 @@ Router.map(function() {
   this.route('user', function() {
     this.route('pledge', function() {
       this.route('create', { path: '/' });
-      this.route('edit');
+      this.route('edit', { path: '/:pledge_id/edit'});
       this.route('old');
     });
   });
