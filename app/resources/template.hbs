@@ -6,12 +6,18 @@
     <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
 
     <h3 class="sidebar-header">Resources Near You</h3>
-    <div class="sidebar-card">
-        {{#each model as |organization|}}
+    {{#each model as |organization|}}
+      <div class="sidebar-card">
         <h3 class="sidebar-primary">{{ organization.name }}</h3>
         <h4 class="sidebar-secondary">{{ organization.name }}</h4>
-        {{/each}}
-    </div>
+      </div>
+    {{/each}}
+    {{#each nashvilleResources as |nashville|}}
+      <div class="sidebar-card">
+        <h3 class="sidebar-primary">{{ nashville.contact_type}}</h3>
+        <h4 class="sidebar-secondary">{{ nashville.contact}}</h4>
+      </div>
+    {{/each}}
   </div>
   <div class="main-content">
     <div class="main-content--header">
@@ -29,11 +35,20 @@
       {{/if}}
 
       {{#each model as |organization|}}
-        {{log organization.location}}
         {{#marker-layer location=organization.location}}
           {{#popup-layer}}
-          <h3>{{ organization.name }}</h3>
-          <h4>{{ organization.phone }}</h4> {{organization.address}}
+            <h3>{{ organization.name }}</h3>
+            <h4>{{ organization.phone }}</h4> {{organization.address}}
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/each}}
+
+      {{#each nashvilleResources as |organization|}}
+      {{log organization.location_1.coordinates}}
+        {{#marker-layer location=organization.location_1.coordinates}}
+          {{#popup-layer}}
+            <h3>{{ organization.contact }}</h3>
+            <h4>{{ organization.phone_number }}</h4> {{organization.loaction_1_address}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
