@@ -35,6 +35,7 @@
       {{/if}}
 
       {{#each model as |organization|}}
+      {{log "model" organization.location}}
         {{#marker-layer location=organization.location}}
           {{#popup-layer}}
             <h3>{{ organization.name }}</h3>
@@ -44,11 +45,11 @@
       {{/each}}
 
       {{#each nashvilleResources as |organization|}}
-      {{log organization.location_1.coordinates}}
-        {{#marker-layer location=organization.location_1.coordinates}}
+      {{log "nashville" organization.location_1.coordinates}}
+        {{#marker-layer location=(arr-reverse organization.location_1.coordinates)}}
           {{#popup-layer}}
             <h3>{{ organization.contact }}</h3>
-            <h4>{{ organization.phone_number }}</h4> {{organization.loaction_1_address}}
+            <h4>{{ organization.phone_number }}</h4> {{organization.location_1_address}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
