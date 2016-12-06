@@ -50,6 +50,7 @@ Router.map(function() {
     });
   });
   this.route('logout');
+  this.route('nashville-test');
 });
 
 export default Router;
