@@ -4,9 +4,11 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
   actions: {
     addPledge(formValues) {
+      const pledge = this.model;
       if (formValues) {
-        const pledge = this.store.createRecord('pledge', formValues);
-        pledge.set('pledge', this.model);
+        // Update Properties from the form
+        pledge.setProperties(formValues);
+
         console.log(pledge);
         // debugger;
         pledge.save()
