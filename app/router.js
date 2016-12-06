@@ -31,7 +31,7 @@ Router.map(function() {
     });
     this.route('user', function() {
       this.route('detail', {path: '/:user_id'});
-      this.route('edit');
+      this.route('edit', {path: '/:user_id/edit'});
 
       this.route('pledge', function() {
       });
