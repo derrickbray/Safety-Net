@@ -1,42 +1,16 @@
-
 <div class="grid">
   <div class="grid-left">
     <div class="admin__title">Resources</div>
-    <div class="admin-side__card">
-      <div class="user-org">Clothing</div>
-      <div class="button-box">
-        {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
+
+    {{#each model as |org|}}
+      <div class="admin-side__card">
+        <div class="user-org">{{ org.name }}</div>
+        <div class="button-box">
+          {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
+        </div>
       </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Childcare</div>
-      <div class="button-box">
-        {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
-      </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Shelter</div>
-      <div class="button-box">
-        {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
-      </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Transportation</div>
-      <div class="button-box">
-        {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
-      </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Woman Services</div>
-      <div class="button-box">
-        {{#link-to "admin.resources.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
-      </div>
-    </div>
+    {{/each}}
 
   </div>
   <div class="grid-right">{{outlet}}</div>

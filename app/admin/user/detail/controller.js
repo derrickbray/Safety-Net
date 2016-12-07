@@ -6,10 +6,14 @@ export default Ember.Controller.extend({
     toggleAndSave(property) {
       const user = this.model;
       user.toggleProperty(property);
-
       user.save();
     },
 
+    deleteUser() {
+      const no = this.model
+      no.destroyRecord()
+      this.transitionToRoute('admin.user');
+    }
+
   },
-  // console.log(isApproved);
 });

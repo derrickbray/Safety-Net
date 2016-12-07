@@ -5,19 +5,22 @@ export default Ember.Controller.extend({
   actions: {
     updateForm(formValues) {
       const userInfo = this.model;
-      if (formValues) {
-        // Update Properties from the form
-        userInfo.setProperties(formValues);
+      this.model.get('organization').then((organization) => {
+        if (formValues) {
+          // Update Properties from the form
+          userInfo.setProperties(formValues);
 
-        userInfo.save()
-        .then(() => {
-        alert('Your Information was updated!');
+          userInfo.save()
+          organization.save()
+          .then(() => {
+            alert('Your Information was updated!');
 
-          this.transitionToRoute('admin.user.detail');
-        });
-      } else{
-        alert('Sorry, Something Went Wrong. Try Again.');
-      }
+            this.transitionToRoute('admin.user.detail');
+          });
+        } else{
+          alert('Sorry, Something Went Wrong. Try Again.');
+        }
+      });
     },
   }
 });
