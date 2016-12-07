@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  // margin-top: 11rem;
   background: #ECEFF1;
 
   & a {
@@ -33,6 +34,7 @@
 .hello {
   display: flex;
   justify-content: center;
+  margin-top: 5rem;
   color: $c-primary;
   font-size: 2rem;
 }
