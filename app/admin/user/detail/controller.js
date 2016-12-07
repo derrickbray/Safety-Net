@@ -16,5 +16,4 @@ export default Ember.Controller.extend({
     }
 
   },
-  // console.log(isApproved);
 });
