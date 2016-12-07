@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
         .then(() => {
         alert('Your pledge was sent for approval!');
 
-          this.transitionToRoute('user.pledge');
+          this.send('reloadData')
         });
       } else{
         alert('Sorry, Something Went Wrong. Try Again.');
