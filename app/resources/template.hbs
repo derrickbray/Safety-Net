@@ -34,9 +34,10 @@
         {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
       {{/if}}
 
+      {{log (icon iconInfo)}}
+
       {{#each model as |organization|}}
-      {{log "model" organization.location}}
-        {{#marker-layer location=organization.location}}
+        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/safetynet.png" iconSize=iconSize)}}
           {{#popup-layer}}
             <h3>{{ organization.name }}</h3>
             <h4>{{ organization.phone }}</h4> {{organization.address}}
@@ -45,7 +46,6 @@
       {{/each}}
 
       {{#each nashvilleResources as |organization|}}
-      {{log "nashville" organization.location_1.coordinates}}
         {{#marker-layer location=(arr-reverse organization.location_1.coordinates)}}
           {{#popup-layer}}
             <h3>{{ organization.contact }}</h3>

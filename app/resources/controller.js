@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  iconSize: [25, 41],
   init() {
     window.navigator.geolocation.getCurrentPosition((position) => {
       this.setProperties({
