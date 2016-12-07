@@ -11,7 +11,8 @@ Router.map(function() {
   this.route('login');
   this.route('sign-up');
   this.route('resources', function() {
-    this.route('er');
+    this.route('detail-local', { path: '/sn/:organization_id' });
+    this.route('detail-nashville', { path: '/nashville/:phone' });
   });
 
   // this.route('detail', { path: '/:id' });

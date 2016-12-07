@@ -13,14 +13,16 @@
     <h3 class="sidebar-header">Resources Near You</h3>
     {{#each model as |organization|}}
       <div class="sidebar-card">
-        <h3 class="sidebar-primary">{{ organization.name }}</h3>
+        <h3 class="sidebar-primary">{{#link-to 'resources.detail-local' organization}}{{ organization.name }}{{/link-to}}</h3>
         <h4 class="sidebar-secondary">{{ organization.name }}</h4>
       </div>
     {{/each}}
     {{#each nashvilleResources as |nashville|}}
       <div class="sidebar-card">
-        <h3 class="sidebar-primary">{{ nashville.contact_type}}</h3>
-        <h4 class="sidebar-secondary">{{ nashville.contact}}</h4>
+        {{#link-to 'resources.detail-nashville' nashville.phone_number}}
+          <h3 class="sidebar-primary">{{ nashville.contact_type}}</h3>
+          <h4 class="sidebar-secondary">{{ nashville.contact}}</h4>
+        {{/link-to}}
       </div>
     {{/each}}
   </div>
@@ -41,16 +43,17 @@
       {{log (icon iconInfo)}}
 
       {{#each model as |organization|}}
-        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/safetynet3.svg" iconSize=iconSize)}}
+        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
           {{#popup-layer}}
             <h3>{{ organization.name }}</h3>
-            <h4>{{ organization.phone }}</h4> {{organization.address}}
+            <h4>{{ organization.phone }}</h4>
+            {{organization.address}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
 
       {{#each nashvilleResources as |organization|}}
-        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/safetynet3.svg" iconSize=iconSize)}}
+        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
           {{#popup-layer}}
             <h3>{{ organization.contact }}</h3>
             <h4>{{ organization.phone_number }}</h4> {{organization.location_1_address}}
