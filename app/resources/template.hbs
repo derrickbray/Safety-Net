@@ -1,9 +1,14 @@
 <div class="app">
   <div class="sidebar">
-    <div onclick= {{action 'showDropdown'}} class="sidebar-dropdown">Choose Category <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
-    <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
-    <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
-    <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
+    <div class="sidebar-dropdown__wrap">
+      <div onclick= {{action 'showDropdown'}} class="sidebar-dropdown">
+        Choose Category
+        <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
+      <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
+      <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
+      <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
+    </div>
+
 
     <h3 class="sidebar-header">Resources Near You</h3>
     {{#each model as |organization|}}
@@ -26,7 +31,6 @@
 
     </div>
 
-    <p><label>{{input type="checkbox" checked=nightMode}} Night mode</label></p>
     {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
       {{#if nightMode}}
         {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
@@ -46,14 +50,13 @@
       {{/each}}
 
       {{#each nashvilleResources as |organization|}}
-        {{#marker-layer location=(arr-reverse organization.location_1.coordinates)}}
+        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/safetynet.png" iconSize=iconSize)}}
           {{#popup-layer}}
             <h3>{{ organization.contact }}</h3>
             <h4>{{ organization.phone_number }}</h4> {{organization.location_1_address}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
-
     {{/leaflet-map}}
 
     {{outlet}}
