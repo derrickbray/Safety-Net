@@ -91,10 +91,21 @@
     border: 1px solid $c-text-secondary;
     }
   }
+
+  &__detail {
+    position: fixed;
+    bottom:0;
+    right: 0;
+    z-index: 1;
+    background: $c-text;
+    width: 69.5%;
+    height: 10rem;
+  }
 }
 
 
 .leaflet-container {
   margin-top: 4rem;
   height: 86vh;
+  z-index: 0;
 }
