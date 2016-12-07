@@ -60,6 +60,10 @@
     background: $c-emergency;
     color:$c-text;
 
+    @media(min-width: 764px) {
+      left: 75%;
+    }
+
 
     a {
 
