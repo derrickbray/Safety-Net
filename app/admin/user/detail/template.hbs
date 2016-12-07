@@ -11,9 +11,9 @@
     {{!-- <div class="user-phone user-info">1234567890</div> --}}
     <a href="#" class="user-website user-info">{{user.website}}</a>
     <div class="button-box">
-      <button type="submit" onsubmit="isApproved" class="btn">Approve</button>
-      <button type="submit" class="btn">Make Admin</button>
-      <button type="submit" class="btn danger">Delete</button>
+      <button type="button" {{action "toggleAndSave" "isApproved"}} class="btn">Approve</button>
+      <button type="button" {{action "toggleAndSave" "isAdmin"}} class="btn">Make Admin</button>
+      <button type="button" class="btn danger">Delete</button>
     </div>
   </div>
 </div>
