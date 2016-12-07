@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   session: Ember.inject.service(),
 
  beforeModel() {
-   this.get(`session`).invalidate();
+   this.get(`session`).invalidate()
+   .then.transitionToRoute('sign-up');
  },
 });

@@ -8,4 +8,10 @@ export default Ember.Route.extend({
       mine: true,
     });
   },
+
+  actions: {
+    reloadData() {
+      this.refresh();
+    }
+  }
 });

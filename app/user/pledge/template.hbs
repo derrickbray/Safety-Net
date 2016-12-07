@@ -14,10 +14,10 @@
 
       {{#each model as |pledge|}}
         <div class="admin-side__card">
-          <div class="user-pledge">{{ pledge.name }}</div>
+          <div class="user-pledge">Pledge: {{ pledge.name }}</div>
           <div class="user-pledge">{{ pledge.description }}</div>
-          <div class="user-pledge">{{ pledge.contactInfo }}</div>
-          <div class="user-pledge__end">{{ pledge.duration }}</div>
+          <div class="user-pledge">Contact: {{ pledge.contactInfo }}</div>
+          <div class="user-pledge__end">Duration: {{ pledge.endDate }}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
             <button type="submit" class="btn">Claimed</button>
