@@ -41,7 +41,7 @@
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
-  // width: 20rem;
+  align-items: flex-start;
   margin: 0 auto;
 
   &-left {
