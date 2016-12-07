@@ -8,10 +8,12 @@
 .sidebar {
   flex-basis: calc(30%);
   min-width: 16rem;
-  padding: 1rem;
   color: $c-text-secondary;
   flex-grow: 1;
   text-align: center;
+  overflow: auto;
+  height: 40rem;
+  margin-top: 16rem;
 
   &-header {
     margin: 1rem;
@@ -40,6 +42,23 @@
     text-align: center;
     padding: 1rem;
     border: 1px solid $c-text-secondary;
+
+
+    &--item {
+      display: none;
+    }
+
+    &__wrap {
+      position: fixed;
+      top: 5rem;
+      left:0;
+      width: 100%;
+      background: $c-text;
+
+      @media(min-width: 764px) {
+        width: 30.5%;
+      }
+    }
   }
 }
 
@@ -49,7 +68,15 @@
   color: $c-text-secondary;
 
   &--header {
+  position: fixed;
+  top: 8rem;
+  left: 0;
   display: flex;
+
+  @media(max-width: 764px) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
 
   &__text {
@@ -66,5 +93,6 @@
 
 
 .leaflet-container {
-  height: 70vh;
+  margin-top: 4rem;
+  height: 90vh;
 }
