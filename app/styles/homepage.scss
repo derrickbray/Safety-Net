@@ -47,9 +47,16 @@
       font-size: 2rem;
       border: 1px solid $c-text-secondary;
       color: $c-text-secondary;
+      width: 20rem;
+      text-align: center;
+      margin: auto;
 
       &__cat {
         padding: 1rem;
+
+        &:hover {
+          color: $c-text-tirshary;
+        }
       }
     }
 

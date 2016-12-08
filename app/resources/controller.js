@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  queryParams: ['category'],
+  category: 'Housing',
+
   iconSize: [25, 41],
   init() {
     window.navigator.geolocation.getCurrentPosition((position) => {
@@ -23,12 +26,16 @@ export default Ember.Controller.extend({
     const southEast = `${this.get('edges._northEast.lng')} ${this.get('edges._southWest.lat')}`;
     const polygon = `MULTIPOLYGON (((${northEast}, ${northWest}, ${southWest}, ${southEast}, ${northEast})))`;
 
-    fetch(`https://data.nashville.gov/resource/8zc7-2afq.json?$limit=100&$where=within_polygon(location_1, '${polygon}')`)
+    fetch(`https://data.nashville.gov/resource/8zc7-2afq.json?contact_type=${this.category}&$limit=100&$where=within_polygon(location_1, '${polygon}')`)
       .then(r => r.json())
       .then((nashvilleResources) => {
         this.set('nashvilleResources', nashvilleResources);
       });
   },
+
+  lookupQueryParams: Ember.observer('category', function() {
+    this.lookupSocrataData();
+  }),
 
   actions: {
     updateCenter(e) {

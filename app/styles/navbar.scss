@@ -38,8 +38,24 @@
     margin: 0;
     padding: 1rem;
     align-items: center;
+    position: relative;
+
+    &__hamburger {
+      display: none;
+      margin-left: 1rem;
+      font-size: 2rem;
+    }
+    @media(max-width: 764px) {
 
 
+      &__mobile {
+        // display: none;
+        // position: absolute;
+        // top: 0;
+        // right: 0;
+        margin: 0.5rem 0;
+      }
+    }
 
     a {
       margin: 1rem;
