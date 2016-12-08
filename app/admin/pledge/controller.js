@@ -10,5 +10,11 @@ export default Ember.Controller.extend({
       pledge.save();
     },
 
+    deletePledge() {
+      const no = this.model
+      no.destroyRecord()
+      this.transitionToRoute('admin');
+    }
+
   },
 });
