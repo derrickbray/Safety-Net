@@ -10,10 +10,13 @@
         <div class="user-pledge__end">{{ pledge.contactInfo }}</div>
         <div class="user-pledge__end">{{ pledge.duration }}</div>
         <div class="user-pledge__end">Approved:{{ pledge.isApproved }}</div>
+        <div class="user-pledge__end">Claimed:{{ pledge.isClaimed }}</div>
         <div class="button-box">
-          {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
-          {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+          {{#link-to "admin.pledge.detail" pledge class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
           <button type="button" {{action "toggleAndSave" pledge "isApproved"}} class="btn">Approved</button>
+          <button type="button" {{action "toggleAndSave" pledge "isClaimed"}} class="btn">Claimed</button>
+          <button type="button" {{action "deletePledge"}} class="btn danger">Delete</button>
         </div>
       </div>
     {{/each}}
