@@ -40,9 +40,11 @@
       {{#each model as |organization|}}
         {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
           {{#popup-layer}}
+          {{#link-to 'er.detail-nashville' organization.phone_number}}
             <h3>{{ organization.name }}</h3>
             <h4>{{ organization.phone }}</h4>
             {{organization.address}}
+            {{/link-to}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
@@ -50,9 +52,11 @@
       {{#each nashvilleResources as |organization|}}
         {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
           {{#popup-layer}}
+          {{#link-to 'er.detail-nashville' organization.phone_number}}
             <h3>{{ organization.contact }}</h3>
             <h4>{{ organization.phone_number }}</h4>
              {{organization.location_1_address}}
+             {{/link-to}}
           {{/popup-layer}}
         {{/marker-layer}}
       {{/each}}
