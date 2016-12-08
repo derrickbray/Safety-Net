@@ -5,8 +5,7 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
 
   actions: {
-    toggleAndSave(property) {
-      const pledge = this.model;
+    toggleAndSave(pledge, property) {
       pledge.toggleProperty(property);
       pledge.save();
     },
