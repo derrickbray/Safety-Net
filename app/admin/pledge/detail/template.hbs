@@ -1,13 +1,15 @@
 {{outlet}}
 <div class="detail">
+
   <div class="detail-card">
-    <div class="detail-card__title">Pledge Details for x-org</div>
-    <div class="user-org user-info">Nash rescue mission</div>
-    <div class="pledge-detail user-info">20 cans of corn</div>
+    <div class="detail-card__title">Pledge</div>
+    <div class="user-org user-info">{{ model.name }}</div>
+    <div class="pledge-detail user-info">{{ model.description }}</div>
     <div class="pledge-end user-info"> Ends on: Dec. 25 2016</div>
     <div class="button-box">
       {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
       <button type="submit" class="btn">Claimed</button>
     </div>
   </div>
+
 </div>

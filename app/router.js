@@ -27,19 +27,15 @@ Router.map(function() {
   });
 
   this.route('admin', function() {
-    this.route('pledge', function() {
-      this.route('edit');
-    });
     this.route('user', function() {
       this.route('detail', {path: '/:user_id'});
       this.route('edit', {path: '/:user_id/edit'});
-
       this.route('pledge', function() {
       });
     });
     this.route('pledge', function() {
-      this.route('edit');
-      this.route('detail', { path: '/:pledge_id'});
+      this.route('detail', {path: '/:pledge_id'});
+      this.route('edit', {path: '/:pledge_id/edit'});
     });
     this.route('resources', function() {
       this.route('detail');

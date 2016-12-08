@@ -11,8 +11,8 @@
         <div class="user-pledge__end">{{ pledge.duration }}</div>
         <div class="user-pledge__end">Approved:{{ pledge.isApproved }}</div>
         <div class="button-box">
-          {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
-          {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+          {{#link-to "admin.pledge.detail" pledge class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
           <button type="button" {{action "toggleAndSave" pledge "isApproved"}} class="btn">Approved</button>
         </div>
       </div>
