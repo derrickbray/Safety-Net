@@ -1,14 +1,15 @@
 <div class="app">
   <div class="sidebar">
-    <div class="sidebar-dropdown__wrap">
-      <div onclick= {{action 'showDropdown'}} class="sidebar-dropdown">
-        Choose Category
-        <span class="fa fa-angle-down sidebar-dropdown-icon"></span></div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Housing</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Food</div>
-      <div class="sidebar-dropdown sidebar-dropdown--item">Clothing</div>
-    </div>
-
+    {{#power-select-multiple
+      class="sidebar-dropdown__wrap"
+      options=names
+      selected=name
+      placeholder="Choose Category"
+      onchange=(action (mut name))
+      as |name|
+    }}
+      {{name}}
+    {{/power-select-multiple}}
 
     <h3 class="sidebar-header">Resources Near You</h3>
     {{#each model as |organization|}}
@@ -27,12 +28,6 @@
     {{/each}}
   </div>
   <div class="main-content">
-    <div class="main-content--header">
-      <h3 class="main-content--header__text">Searching For</h3>
-      <h3 class="main-content--header__tag">Housing</h3>
-
-    </div>
-
     {{#leaflet-map class="leaflet-container leaflet-container__desktop" lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
       {{#if nightMode}}
         {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
