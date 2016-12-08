@@ -23,7 +23,7 @@
           <div class="user-pledge">Claimed: {{ pledge.isClaimed }}</div>
           <div class="button-box">
             {{#link-to "user.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
-            <button type="button" {{action "toggleAndSave" "isClaimed" bubbles=false}} class="btn">Status Change</button>
+            <button type="button" {{action "toggleAndSave" pledge "isClaimed" }} class="btn">Status Change</button>
           </div>
         </div>
 
