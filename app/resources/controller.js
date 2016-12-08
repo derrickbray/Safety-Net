@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  names: ['Housing', 'Food', 'Clothing'],
   queryParams: ['category'],
   category: 'Housing',
 
@@ -47,7 +48,7 @@ export default Ember.Controller.extend({
       this.lookupSocrataData();
     },
     showDropdown() {
-
     },
+    foo() { },
   }
 });

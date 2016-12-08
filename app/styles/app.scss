@@ -7,9 +7,11 @@ $c-text-tirshary: rgba(0, 0, 0, 1.0);
 
 
 
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome/scss/font-awesome';
+ @import "ember-power-select";
 @import 'reset';
 @import 'navbar';
 @import 'homepage';
@@ -18,4 +20,3 @@ $c-text-tirshary: rgba(0, 0, 0, 1.0);
 @import 'admin';
 @import 'about';
 @import 'er';
-@import "ember-side-menu";
