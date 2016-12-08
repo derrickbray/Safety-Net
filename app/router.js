@@ -52,6 +52,10 @@ Router.map(function() {
   });
   this.route('logout');
   this.route('nashville-test');
+  this.route('er', function() {
+    this.route('detail-local', { path: '/sn/:organization_id' });
+    this.route('detail-nashville', { path: '/nashville/:phone' });
+  });
 });
 
 export default Router;
