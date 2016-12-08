@@ -1,14 +1,40 @@
 <div class="main-content__detail">
-
-
-    {{#each model as |value|}}
-      <h2>{{value.contact_type}}</h2>
-      <h4>{{value.contact}}</h4>
-      <h4>{{value.phone_number}}</h4>
-      <h4>{{value.notes}}</h4>
-      <h4>{{value.location_1_zip}}</h4>
-      <h4>{{value.location_1_city}}</h4>
-      <h4>{{value.location_1_address}}</h4>
-    {{/each}}
+  {{#each model as |value|}}
+  <h2>{{value.contact_type}}</h2>
+  <h4>{{value.contact}}</h4>
+  <h4>{{value.phone_number}}</h4>
+  <h4>{{value.notes}}</h4>
+  <h4>{{value.location_1_zip}}</h4>
+  <h4>{{value.location_1_city}}</h4>
+  <h4>{{value.location_1_address}}</h4>
+  {{/each}}
 
 </div>
+{{!-- {{#leaflet-map  class="leaflet-container leaflet-container__mobile" lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+  {{#if nightMode}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+  {{else}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{/if}}
+
+  {{log (icon iconInfo)}}
+
+  {{#each model as |organization|}}
+    {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
+      {{#popup-layer}}
+        <h3>{{ organization.name }}</h3>
+        <h4>{{ organization.phone }}</h4>
+        {{organization.address}}
+      {{/popup-layer}}
+    {{/marker-layer}}
+  {{/each}}
+
+  {{#each nashvilleResources as |organization|}}
+    {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
+      {{#popup-layer}}
+        <h3>{{ organization.contact }}</h3>
+        <h4>{{ organization.phone_number }}</h4> {{organization.location_1_address}}
+      {{/popup-layer}}
+    {{/marker-layer}}
+  {{/each}}
+{{/leaflet-map}} --}}
