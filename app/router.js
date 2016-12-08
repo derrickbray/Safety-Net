@@ -39,7 +39,7 @@ Router.map(function() {
     });
     this.route('pledge', function() {
       this.route('edit');
-      this.route('detail', { path: '/:id'});
+      this.route('detail', { path: '/:pledge_id'});
     });
     this.route('resources', function() {
       this.route('detail');
