@@ -33,7 +33,7 @@
 
     </div>
 
-    {{#leaflet-map lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
+    {{#leaflet-map class="leaflet-container leaflet-container__desktop" lat=lat lng=lng zoom=zoom onMoveend=(action "updateCenter")}}
       {{#if nightMode}}
         {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
       {{else}}

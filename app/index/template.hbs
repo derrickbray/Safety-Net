@@ -24,15 +24,17 @@
   <div class="container">
     <div class="localcommunity">
       <h2 class="localcommunity-header">Local Community Resources</h2>
+      {{#each model as |pledge|}}
+
       <div class="localcommunity-card">
-        <span class="localcommunity-card--content localcommunity-nonprofit">Non-profit Organization</span>
-        <span class="localcommunity-card--content localcommunity-posted">posted</span>
-        <span class="localcommunity-card--content">1 day ago</span>
+        <span class="localcommunity-card--content localcommunity-nonprofit">{{ pledge.name}}</span>
+        <span class="localcommunity-card--content localcommunity-posted">{{ pledge.duration }}</span>
       </div>
       <div class="localcommunity-card">
-        <span class="localcommunity-card--content">here you list what items you have</span>
-        <span class="localcommunity-card--content localcommunity-right">phone number</span>
+        <span class="localcommunity-card--content">{{ pledge.description }}</span>
+        <span class="localcommunity-card--content localcommunity-right">{{ pledge.contactInfo }}</span>
       </div>
+      {{/each}}
     </div>
   </div>
 </section>
