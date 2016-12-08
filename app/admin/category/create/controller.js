@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
   actions: {
     addCategory(formValues) {
       if (formValues) {
-        const category = this.store.createRecord('category', formValues);
-        category.set('category', this.model);
+        const category = this.store.createRecord('category.name', formValues);
+        category.set('category.name', this.model);
 
         category.save()
         .then(() => {

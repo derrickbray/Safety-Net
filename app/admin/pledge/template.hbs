@@ -1,34 +1,22 @@
 <div class="grid">
   <div class="grid-left">
     <div class="admin__title">Pledges</div>
-    <div class="admin-side__card">
-      <div class="user-org">Nash Rescue Mission</div>
-      <div class="user-pledge">20 cans of corn</div>
-      <div class="user-pledge__end">Dec. 25 2016</div>
-      <div class="button-box">
-        {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
-        <button type="submit" class="btn">Claimed</button>
+
+    {{#each model as |pledge|}}
+      <div class="admin-side__card">
+        <div class="user-org">{{ pledge.name }}</div>
+        {{!-- <div class="user-org">{{ pledge.user}}</div> --}}
+        <div class="user-pledge">{{ pledge.description }}</div>
+        <div class="user-pledge__end">{{ pledge.contactInfo }}</div>
+        <div class="user-pledge__end">{{ pledge.duration }}</div>
+        <div class="button-box">
+          {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
+          <button type="submit" class="btn">Approved</button>
+        </div>
       </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Nash Rescue Mission</div>
-      <div class="user-pledge">20 cans of corn</div>
-      <div class="button-box">
-        {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
-        <button type="submit" class="btn">Claimed</button>
-      </div>
-    </div>
-    <div class="admin-side__card">
-      <div class="user-org">Nash Rescue Mission</div>
-      <div class="user-pledge">20 cans of corn</div>
-      <div class="button-box">
-        {{#link-to "admin.pledge.detail" class="btn" }}Details{{/link-to}}
-        {{#link-to "admin.pledge.edit" class="btn" }}Edit{{/link-to}}
-        <button type="submit" class="btn">Claimed</button>
-      </div>
-    </div>
+    {{/each}}
+
   </div>
   <div class="grid-right">{{outlet}}</div>
 </div>
