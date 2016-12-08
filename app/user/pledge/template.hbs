@@ -13,19 +13,19 @@
       <div class="admin__title">My Current Pledges</div>
 
       {{#each model as |pledge|}}
-      {{#if pledge.isApproved}}
+        {{#if pledge.isApproved}}
 
-        <div class="admin-side__card">
-          <div class="user-pledge">Pledge: {{ pledge.name }}</div>
-          <div class="user-pledge">{{ pledge.description }}</div>
-          <div class="user-pledge">Contact: {{ pledge.contactInfo }}</div>
-          <div class="user-pledge__end">Duration: {{ pledge.endDate }}</div>
-          <div class="user-pledge">Claimed: {{ pledge.isClaimed }}</div>
-          <div class="button-box">
-            {{#link-to "user.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
-            <button type="button" {{action "toggleAndSave" pledge "isClaimed" }} class="btn">Status Change</button>
+          <div class="admin-side__card">
+            <div class="user-pledge">Pledge: {{ pledge.name }}</div>
+            <div class="user-pledge">{{ pledge.description }}</div>
+            <div class="user-pledge">Contact: {{ pledge.contactInfo }}</div>
+            <div class="user-pledge__end">Duration: {{ pledge.endDate }}</div>
+            <div class="user-pledge">Claimed: {{ pledge.isClaimed }}</div>
+            <div class="button-box">
+              {{#link-to "user.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
+              <button type="button" {{action "toggleAndSave" pledge "isClaimed" }} class="btn">Status Change</button>
+            </div>
           </div>
-        </div>
 
         {{/if}}
       {{/each}}
