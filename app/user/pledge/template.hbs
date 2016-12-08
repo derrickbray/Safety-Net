@@ -13,7 +13,7 @@
       <div class="admin__title">My Current Pledges</div>
 
       {{#each model as |pledge|}}
-      {{!-- {{#if pledge.isApproved}} --}}
+      {{#if pledge.isApproved}}
 
         <div class="admin-side__card">
           <div class="user-pledge">Pledge: {{ pledge.name }}</div>
@@ -26,7 +26,8 @@
             <button type="button" {{action "toggleAndSave" "isClaimed" bubbles=false}} class="btn">Status Change</button>
           </div>
         </div>
-        {{!-- {{/if}} --}}
+
+        {{/if}}
       {{/each}}
 
     </div>
