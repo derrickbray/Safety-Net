@@ -9,4 +9,5 @@ export default Ember.Controller.extend({
       user.toggleProperty(property);
       user.save();
     },
+  }
 });
