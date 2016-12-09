@@ -10,14 +10,14 @@ export default Ember.Controller.extend({
           // Update Properties from the form
           userInfo.setProperties(formValues);
 
-          userInfo.save()
+          userInfo.save();
           organization.save()
           .then(() => {
             alert('Your Information was updated!');
 
             this.transitionToRoute('admin.user.detail');
           });
-        } else{
+        } else {
           alert('Sorry, Something Went Wrong. Try Again.');
         }
       });

@@ -9,11 +9,11 @@ export default Ember.Controller.extend({
 
         category.save()
         .then(() => {
-        alert('It worked!');
+          alert('It worked!');
 
           this.transitionToRoute('admin.category');
         });
-      } else{
+      } else {
         alert('It no work!');
       }
     },

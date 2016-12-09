@@ -7,7 +7,7 @@ export default Ember.Service.extend({
 
   loadCurrentUser() {
     if (this.get('session.isAuthenticated')) {
-      return this.get('store').queryRecord('user', {current: true})
+      return this.get('store').queryRecord('user', { current: true })
         .then((user) => {
           this.set('user', user);
         });
