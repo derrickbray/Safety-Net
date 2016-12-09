@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function arrReverse([arr]/*, hash*/) {
+export function arrReverse([arr]/* , hash*/) {
   return [...arr].reverse();
 }
 

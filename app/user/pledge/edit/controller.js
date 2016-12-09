@@ -13,11 +13,11 @@ export default Ember.Controller.extend({
         // debugger;
         pledge.save()
         .then(() => {
-        alert('Your pledge was updated!');
+          alert('Your pledge was updated!');
 
           this.transitionToRoute('user.pledge');
         });
-      } else{
+      } else {
         alert('Sorry, Something Went Wrong. Try Again.');
       }
     },

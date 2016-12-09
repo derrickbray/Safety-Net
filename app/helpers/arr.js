@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function arr(params/*, hash*/) {
+export function arr(params/* , hash*/) {
   return params;
 }
 

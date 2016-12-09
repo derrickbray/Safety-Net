@@ -28,6 +28,8 @@
     <div class="localcommunity">
       <h2 class="localcommunity-header">Local Community Resources</h2>
       {{#each model as |pledge|}}
+        {{#if (and pledge.isApproved (not pledge.isClaimed)) }}
+        {{!-- if (pledge.isApproved && !pledge.isClaimed) --}}
 
       <div class="localcommunity-card">
         <span class="localcommunity-card--content localcommunity-nonprofit">{{ pledge.name}}</span>
@@ -37,6 +39,7 @@
         <span class="localcommunity-card--content">{{ pledge.description }}</span>
         <span class="localcommunity-card--content localcommunity-right">{{ pledge.contactInfo }}</span>
       </div>
+      {{/if}}
       {{/each}}
     </div>
   </div>
