@@ -11,8 +11,8 @@ export default Ember.Controller.extend({
     },
 
     deletePledge() {
-      const no = this.model
-      no.destroyRecord()
+      const no = this.model;
+      no.destroyRecord();
       this.transitionToRoute('admin.pledge');
     }
 
