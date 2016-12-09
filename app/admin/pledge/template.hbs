@@ -14,9 +14,6 @@
         <div class="button-box">
           {{#link-to "admin.pledge.detail" pledge class="btn" }}Details{{/link-to}}
           {{#link-to "admin.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
-          <button type="button" {{action "toggleAndSave" pledge "isApproved"}} class="btn">Approved</button>
-          <button type="button" {{action "toggleAndSave" pledge "isClaimed"}} class="btn">Claimed</button>
-          <button type="button" {{action "deletePledge"}} class="btn danger">Delete</button>
         </div>
       </div>
     {{/each}}

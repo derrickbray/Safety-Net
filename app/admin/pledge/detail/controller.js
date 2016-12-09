@@ -10,11 +10,11 @@ export default Ember.Controller.extend({
       pledge.save();
     },
 
-    // deleteUser() {
-    //   const no = this.model
-    //   no.destroyRecord()
-    //   this.transitionToRoute('admin.user');
-    // }
+    deletePledge() {
+      const no = this.model
+      no.destroyRecord()
+      this.transitionToRoute('admin.pledge');
+    }
 
   },
 });
