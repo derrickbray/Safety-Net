@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
+
 export default Ember.Route.extend({
   model() {
-    return $.ajax({
+    return Ember.$.ajax({
       url: 'https://data.nashville.gov/resource/8zc7-2afq.json',
       type: 'GET',
       data: {
