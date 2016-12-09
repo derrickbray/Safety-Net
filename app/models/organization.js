@@ -9,7 +9,7 @@ export default DS.Model.extend({
   lng: DS.attr('number'),
   user: DS.belongsTo('user'),
 
-  location: Ember.computed('lng', 'lat', function() {
+  location: Ember.computed('lng', 'lat', function () {
     return [this.get('lat'), this.get('lng')];
   }),
 });

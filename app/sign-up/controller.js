@@ -22,8 +22,8 @@ export default Ember.Controller.extend({
 
         this.get('session').authenticate(authenticator, secretStuff)
           .then(() => {
-          this.transitionToRoute('user.pledge');
-        });
+            this.transitionToRoute('user.pledge');
+          });
       })
       .catch(() => {
         alert('Error Creating User');

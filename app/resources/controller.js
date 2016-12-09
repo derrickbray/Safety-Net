@@ -35,14 +35,14 @@ export default Ember.Controller.extend({
       });
   },
 
-  lookupQueryParams: Ember.observer('category', function() {
+  lookupQueryParams: Ember.observer('category', function () {
     this.lookupSocrataData();
   }),
 
   actions: {
     updateCenter(e) {
       this.set('edges', e.target.getBounds());
-      let center = e.target.getCenter();
+      const center = e.target.getCenter();
       this.set('lat', center.lat);
       this.set('lng', center.lng);
 
