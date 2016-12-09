@@ -2,10 +2,10 @@
   <div class="sidebar">
     {{#power-select-multiple
       class="sidebar-dropdown__wrap"
-      options=names
-      selected=name
+      options=categoryOptions
+      selected=category
       placeholder="Choose Category"
-      onchange=(action (mut name))
+      onchange=(action (mut category))
       as |name|
     }}
       {{name}}
