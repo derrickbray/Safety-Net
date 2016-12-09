@@ -1,3 +1,5 @@
+{{#if currentUser.user.isAdmin}}
+
 <div class="hello">You Are In Admin, Enjoy Your Unlimited Power</div>
 <div class="admin-page">
   <div class="admin-links">
@@ -9,3 +11,5 @@
 
   <div class="admin__content">{{outlet}}</div>
 </div>
+
+{{/if}}
