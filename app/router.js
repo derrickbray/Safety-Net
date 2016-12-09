@@ -36,8 +36,8 @@ Router.map(function () {
       this.route('edit', { path: '/:pledge_id/edit' });
     });
     this.route('resources', function () {
-      this.route('detail', { path: '/:resource_id' });
-      this.route('edit', { path: '/:resource_id/edit' });
+      this.route('detail', { path: '/:organization_id' });
+      this.route('edit', { path: '/:organization_id/edit' });
     });
     this.route('category', function () {
       this.route('create');

@@ -1,20 +1,14 @@
 {{outlet}}
 <div class="detail">
 
-  {{#each model as |org|}}
   <div class="detail-card">
     <div class="detail-card__title">Organization Information</div>
-    {{!-- <div class="user-org user-info">Category:</div> --}}
-    <div class="pledge-detail user-info">Resource: {{ org.name }}</div>
-    <div class="pledge-detail user-info">Address: {{ org.address }}</div>
-    <div class="pledge-detail user-info">Phone #: {{ org.phone }}</div>
-    <div class="pledge-detail user-info">Website: {{ org.website }}</div>
+    {{!-- <div class="user-organization user-info">Category:</div> --}}
+    <div class="pledge-detail user-info">Resource: {{ model.name }}</div>
+    <div class="pledge-detail user-info">Address: {{ model.address }}</div>
+    <div class="pledge-detail user-info">Phone #: {{ model.phone }}</div>
+    <div class="pledge-detail user-info">Website: {{ model.website }}</div>
 
-
-    {{!-- <div class="button-box">
-      {{#link-to "admin.resources.edit" organization class="btn" }}Edit{{/link-to}}
-    </div> --}}
   </div>
-  {{/each}}
 
 </div>

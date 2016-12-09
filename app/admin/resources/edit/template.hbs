@@ -2,7 +2,7 @@
   <div class="detail-card">
     <div class="detail-card__title">Edit Resource Infomation</div>
 
-    {{#simple-form class="card__form" onsubmit=(action "updateResource") as | formValues |}}
+    {{#simple-form class="card__form" startingValues=model onsubmit=(action "updateResource") as | formValues |}}
       {{!-- <div class="user-org user-info">Category</div>
       {{input class="form__input" type="text" required=true value=formValues.type placeholder="Category"}} --}}
       <div class="pledge-detail user-info">Resource</div>
