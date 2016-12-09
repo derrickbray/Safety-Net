@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.findRecord('pledge', this.model)
-  }
+  model({ pledge_id }) {
+    return this.store.findRecord('pledge', pledge_id);
+  },
 });
