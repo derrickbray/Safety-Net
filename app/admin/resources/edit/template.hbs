@@ -3,18 +3,17 @@
     <div class="detail-card__title">Edit Resource Infomation</div>
 
     {{#simple-form class="card__form" onsubmit=(action "updateResource") as | formValues |}}
-      <div class="user-org user-info">Category</div>
-      {{input class="form__input" type="text" required=true value=formValues.type placeholder="Category"}}
+      {{!-- <div class="user-org user-info">Category</div>
+      {{input class="form__input" type="text" required=true value=formValues.type placeholder="Category"}} --}}
       <div class="pledge-detail user-info">Resource</div>
-      {{input class="form__input" type="text" required=true value=formValues.contact placeholder="Resource"}}
+      {{input class="form__input" type="text" required=true value=formValues.name placeholder="Resource"}}
+      <div class="pledge-detail user-info">Address</div>
+      {{input class="form__input" type="text" required=true value=formValues.address placeholder="Address"}}
       <div class="pledge-detail user-info">Phone #</div>
       {{input class="form__input" type="text" required=true value=formValues.phone placeholder="Phone #"}}
-      <div class="pledge-detail user-info">Notes</div>
-      {{input class="form__input" type="text" required=true value=formValues.notes placeholder="Notes"}}
+
       <div class="pledge-detail user-info">Website</div>
       {{input class="form__input" type="text" required=true value=formValues.website placeholder="Website"}}
-      <div class="pledge-detail user-info">Address</div>
-      {{input class="form__input" type="text" required=true value=formValues.location1 placeholder="Address"}}
       <div class="button-box">
         <button type="submit" class="btn">Update</button>
       </div>

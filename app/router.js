@@ -15,8 +15,6 @@ Router.map(function () {
     this.route('detail-nashville', { path: '/nashville/:phone' });
   });
 
-  // this.route('detail', { path: '/:id' });
-  // this.route('new-item', { path: '/:id/new-item' });
 
   this.route('user', function () {
     this.route('pledge', function () {
@@ -38,8 +36,8 @@ Router.map(function () {
       this.route('edit', { path: '/:pledge_id/edit' });
     });
     this.route('resources', function () {
-      this.route('detail');
-      this.route('edit');
+      this.route('detail', { path: '/:resource_id' });
+      this.route('edit', { path: '/:resource_id/edit' });
     });
     this.route('category', function () {
       this.route('create');
