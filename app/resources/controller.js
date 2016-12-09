@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  names: ['Housing', 'Food', 'Clothing'],
+  categoryOptions: ['Housing', 'Food Assistance', 'Clothing'],
   queryParams: ['category'],
-  category: 'Housing',
+  category: ['Housing'],
 
   iconSize: [25, 41],
   init() {
@@ -26,8 +26,9 @@ export default Ember.Controller.extend({
     const southWest = `${this.get('edges._southWest.lng')} ${this.get('edges._southWest.lat')}`;
     const southEast = `${this.get('edges._northEast.lng')} ${this.get('edges._southWest.lat')}`;
     const polygon = `MULTIPOLYGON (((${northEast}, ${northWest}, ${southWest}, ${southEast}, ${northEast})))`;
+    const contactType = `contact_type in(${this.get('category').map(s => `'${s}'`).join(', ')})`;
 
-    fetch(`https://data.nashville.gov/resource/8zc7-2afq.json?contact_type=${this.category}&$limit=100&$where=within_polygon(location_1, '${polygon}')`)
+    fetch(`https://data.nashville.gov/resource/8zc7-2afq.json?$limit=100&$where=within_polygon(location_1, '${polygon}') AND ${contactType}`)
       .then(r => r.json())
       .then((nashvilleResources) => {
         this.set('nashvilleResources', nashvilleResources);
