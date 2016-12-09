@@ -50,8 +50,8 @@
   &-left {
     max-width: 20rem;
     flex-grow: 1;
-    // min-width: 20rem;
-    // max-width: 20rem;
+    height: 65vh;
+    overflow: scroll;
     margin-top: 2rem;
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
 

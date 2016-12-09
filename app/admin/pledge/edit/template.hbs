@@ -2,11 +2,18 @@
   <div class="detail-card">
     <div class="detail-card__title">Edit Pledge of user</div>
 
-    {{#simple-form class="card__form" onsubmit=(action "updateForm") as | formValues |}}
+    {{#simple-form class="card__form" startingValues=model onsubmit=(action "addPledge") as | formValues |}}
       <div class="pledge-detail user-info">Pledge</div>
-      {{input class="form__input" type="text" required=true id="pledge.name"value=formValues.pledge placeholder="Pledge"}}
+      {{input class="form__input" type="text" required=true  id="name" value=formValues.name placeholder="Pledge"}}
+
+      <div class="pledge-detail user-info">Description</div>
+      {{input class="form__input" type="text" required=true  id="description" value=formValues.description placeholder="Pledge"}}
+
+      <div class="pledge-detail user-info">Contact Info</div>
+      {{input class="form__input" type="text" required=true  id="contactInfo" value=formValues.contactInfo placeholder="Pledge"}}
+
       <div class="pledge-detail user-info">End Date</div>
-      {{input class="form__input" type="text" required=true value=formValues.date placeholder="End Date"}}
+      {{input class="form__input" type="date" required=true  id="endDate" value=formValues.date placeholder="End Date"}}
       <div class="button-box">
         <button type="submit" class="btn">Save</button>
       </div>
