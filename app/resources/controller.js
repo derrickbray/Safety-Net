@@ -24,8 +24,17 @@ export default Ember.Controller.extend({
   queryParams: ['category'],
   category: ['Housing'],
 
+  shadowSize: [
+    55, 41
+  ],
+  shadowAnchor: [
+    19, 96
+  ],
   iconSize: [
     25, 41
+  ],
+  iconAnchor: [
+    22, 94
   ],
   init() {
     window.navigator.geolocation.getCurrentPosition((position) => {
