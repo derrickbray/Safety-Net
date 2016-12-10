@@ -38,7 +38,7 @@
       {{log (icon iconInfo)}}
 
       {{#each model as |organization|}}
-        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
+        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconAnchor=iconAnchor shadowUrl="/img/shadow.svg" shadowAnchor=shadowAnchor shadowSize=shadowSize iconSize=iconSize)}}
           {{#popup-layer}}
               **Safety Net Certified**
             <h3>{{ organization.name }}</h3>
@@ -49,7 +49,7 @@
       {{/each}}
 
       {{#each nashvilleResources as |organization|}}
-        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconUrl="/img/logo2.svg" iconSize=iconSize)}}
+        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconAnchor=iconAnchor iconUrl="/img/logo2.svg" shadowUrl="/img/shadow.svg" shadowAnchor=shadowAnchor shadowSize=shadowSize iconSize=iconSize)}}
           {{#popup-layer}}
           **Nashville Resource**
             <h3>{{ organization.contact }}</h3>
