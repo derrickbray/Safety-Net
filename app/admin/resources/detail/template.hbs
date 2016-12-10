@@ -2,16 +2,14 @@
 <div class="detail">
 
   <div class="detail-card">
-    <div class="detail-card__title">Resource Information</div>
-    <div class="user-org user-info">Category:</div>
-    <div class="pledge-detail user-info">Resource:</div>
-    <div class="pledge-detail user-info">Phone #:</div>
-    <div class="pledge-detail user-info">Notes:</div>
-    <div class="pledge-detail user-info">Website:</div>
-    <div class="pledge-detail user-info">Address:</div>
-
+    <div class="detail-card__title">Organization Information</div>
+    {{!-- <div class="user-organization user-info">Category:</div> --}}
+    <div class="pledge-detail user-info">Resource: {{ model.name }}</div>
+    <div class="pledge-detail user-info">Address: {{ model.address }}</div>
+    <div class="pledge-detail user-info">Phone #: {{ model.phone }}</div>
+    <div class="pledge-detail user-info">Website: {{ model.website }}</div>
     <div class="button-box">
-      {{#link-to "admin.resources.edit" class="btn" }}Edit{{/link-to}}
+      <button type="button" {{action "deleteOrg" model }} class="btn danger">Delete</button>
     </div>
   </div>
 
