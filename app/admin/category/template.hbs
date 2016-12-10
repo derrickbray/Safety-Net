@@ -3,18 +3,15 @@
     <div class="admin__title">Categories</div>
     <div class="admin-side__card">
       {{#link-to "admin.category.create" class="category__link-full" }}Create a New Category{{/link-to}}
-      <div class="category__list">
-        <div class="category__name">Children</div>
-        {{#link-to "admin.category.edit" class="category__link" }}Edit{{/link-to}}
-      </div>
-      <div class="category__list">
-        <div class="category__name">Women</div>
-        {{#link-to "admin.category.edit" class="category__link" }}Edit{{/link-to}}
-      </div>
-      <div class="category__list">
-        <div class="category__name">Housing</div>
-        {{#link-to "admin.category.edit" class="category__link" }}Edit{{/link-to}}
-      </div>
+
+      {{#each model as |category|}}
+
+        <div class="category__list">
+          <div class="category__name">{{ category.name }}</div>
+          {{#link-to "admin.category.edit" class="category__link" }}Edit{{/link-to}}
+        </div>
+
+      {{/each}}
 
     </div>
   </div>
