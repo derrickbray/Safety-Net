@@ -1,0 +1,24 @@
+<nav class="nav">
+  <div class="nav-left">
+    <img src="/img/logo2.svg" class="logo" alt="">
+    <h1 class="nav-item is-brand">{{#link-to "index"}}Safety Net{{/link-to}}</h1>
+  </div>
+  <ul class="nav-right__column {{if showMobile "nav-right__column--active"}}">
+    <button {{action toggleProperty "showMobile"}} class="nav-right__hamburger fa fa-bars"></button>
+    <button {{action toggleProperty "showMobile"}} class="nav-right__ex fa fa-times"></button>
+    <li class="nav-er--button nav-right__mobile">{{#link-to "resources"}}I Need Shelter{{/link-to}}</li>
+    <li class="nav-right__mobile">{{#link-to "about"}}About{{/link-to}}</li>
+    <li class="nav-right__mobile">{{#link-to "sign-up"}}Sign-Up{{/link-to}}</li>
+    <li class="nav-right__mobile">{{#link-to "login"}}Login{{/link-to}}</li>
+    <li class="nav-right__mobile">{{#link-to "logout"}}Logout{{/link-to}}</li>
+  </ul>
+  <ul class="nav-right__row">
+    <li class="nav-er--button nav-right__desktop">{{#link-to "resources"}}I Need Shelter{{/link-to}}</li>
+    <li class="nav-right__desktop">{{#link-to "about"}}About{{/link-to}}</li>
+    <li class="nav-right__desktop">{{#link-to "sign-up"}}Sign-Up{{/link-to}}</li>
+    <li class="nav-right__desktop">{{#link-to "login"}}Login{{/link-to}}</li>
+    <li class="nav-right__desktop">{{#link-to "logout"}}Logout{{/link-to}}</li>
+  </ul>
+</nav>
+
+{{yield}}

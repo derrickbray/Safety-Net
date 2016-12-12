@@ -16,8 +16,8 @@
       selected=category
       placeholder="Choose Category"
       onchange=(action (mut category))
-    as |name|
-  }}
+       as |name|
+     }}
     {{#link-to "resources" (query-params category=(arr name))}}{{name}}{{/link-to}}
   {{/power-select}}
   </div>
