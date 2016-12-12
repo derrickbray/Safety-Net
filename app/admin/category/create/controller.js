@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
         .then(() => {
           alert('It worked!');
         });
+        this.transitionToRoute('admin.category');
       } else {
         alert('It no work!');
       }
