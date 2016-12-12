@@ -21,8 +21,10 @@ export default Ember.Controller.extend({
 
     deleteCategory() {
       const no = this.model;
-      no.destroyRecord();
-      this.transitionToRoute('admin.category');
+      if (confirm('are you sure?')) {
+        no.destroyRecord();
+        this.transitionToRoute('admin.category');
+      }
     }
   }
 });
