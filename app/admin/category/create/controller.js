@@ -10,9 +10,8 @@ export default Ember.Controller.extend({
         category.save()
         .then(() => {
           alert('It worked!');
-
-          this.send('reloadData');
         });
+        this.transitionToRoute('admin.category');
       } else {
         alert('It no work!');
       }

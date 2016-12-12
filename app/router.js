@@ -41,7 +41,7 @@ Router.map(function () {
     });
     this.route('category', function () {
       this.route('create');
-      this.route('edit');
+      this.route('edit', { path: '/:category_id/edit' });
     });
   });
   this.route('logout');
