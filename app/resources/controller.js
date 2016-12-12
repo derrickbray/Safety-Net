@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  map: Ember.inject.service(),
+
   categoryOptions: [
     'Housing',
     'Food Assistance',
@@ -25,27 +27,32 @@ export default Ember.Controller.extend({
   category: ['Housing'],
 
   shadowSize: [
-    55, 41
+    50, 64
   ],
   shadowAnchor: [
-    19, 96
+    4, 62
   ],
   iconSize: [
-    25, 41
+    38, 95
   ],
   iconAnchor: [
     22, 94
   ],
+  popupAnchor: [
+    -3, -76
+  ]
+
   init() {
     window.navigator.geolocation.getCurrentPosition((position) => {
-      this.setProperties({ lat: position.coords.latitude, lng: position.coords.longitude });
+      this.get('map').centerMap(position.coords.latitude, position.coords.longitude, true);
     });
   },
-  lat: 36.1526986,
-  lng: -86.7761604,
-  zoom: 15,
 
   lookupSocrataData() {
+    if (!this.get('edges._northEast.lng')) {
+      return;
+    }
+
     const northEast = `${this.get('edges._northEast.lng')} ${this.get('edges._northEast.lat')}`;
     const northWest = `${this.get('edges._southWest.lng')} ${this.get('edges._northEast.lat')}`;
     const southWest = `${this.get('edges._southWest.lng')} ${this.get('edges._southWest.lat')}`;
@@ -67,12 +74,13 @@ export default Ember.Controller.extend({
     updateCenter(e) {
       this.set('edges', e.target.getBounds());
       const center = e.target.getCenter();
-      this.set('lat', center.lat);
-      this.set('lng', center.lng);
-
-      this.lookupSocrataData();
+      this.send('centerMap', center.lat, center.lng);
     },
     showDropdown() {},
-    foo() {}
-  }
+    centerMap(lat, lng) {
+      this.get('map').centerMap(lat, lng);
+
+      this.lookupSocrataData();
+    }
+  },
 });
