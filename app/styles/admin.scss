@@ -131,3 +131,19 @@
 .danger {
   background: $c-emergency;
 }
+
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+
+  :hover {
+    background: grey;
+  }
+}
