@@ -13,7 +13,7 @@
     padding: 1rem;
     background: $c-primary;
     color: $c-text;
-    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+    // box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
     text-align: center;
 
     &:active {
@@ -141,7 +141,7 @@
 .checkbox {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 45%;
 
   :hover {
     background: grey;
