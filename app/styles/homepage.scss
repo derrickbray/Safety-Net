@@ -7,13 +7,16 @@
     object-fit: cover;
     opacity: 0.6;
 
+    @media(max-width: 764px) {
+      height: 39rem;
+    }
     @media(max-width: 440px) {
       height: 40rem;
     }
   }
   &-text {
   position: absolute;
-  top: 27%;
+  top: 17%;
   left: 50%;
   transform: translate(-50%, 0);
   color: $c-text;
@@ -21,7 +24,7 @@
   text-align: center;
 
   @media(max-width: 764px) {
-    top: 35%;
+    top: 25%;
     font-size: 2rem;
   }
   @media(max-width: 440px) {
