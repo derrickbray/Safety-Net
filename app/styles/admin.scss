@@ -141,9 +141,9 @@
 .checkbox {
   display: flex;
   justify-content: space-between;
-  width: 45%;
+  width: 100%;
 
-  :hover {
-    background: grey;
+  &:hover {
+    background: #ECEFF1;
   }
 }

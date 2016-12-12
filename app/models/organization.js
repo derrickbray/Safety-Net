@@ -1,4 +1,4 @@
-import ember from 'ember';
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -9,6 +9,7 @@ export default DS.Model.extend({
   lat: DS.attr('number'),
   lng: DS.attr('number'),
   user: DS.belongsTo('user'),
+  categories: DS.hasMany('category'),
 
   location: Ember.computed('lng', 'lat', function () {
     return [this.get('lat'), this.get('lng')];

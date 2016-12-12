@@ -18,7 +18,12 @@
 
       {{#each model.categories as |category|}}
         <div class="checkbox-grid">
-          <div class="checkbox">{{category.name}} {{input class="check" type="checkbox"}}</div>
+          <div class="checkbox">{{category.name}}
+            <input class="check"
+              type="checkbox"
+              checked={{contains category model.organization.categories}}
+              onChange={{action "toggleCategory" category}}
+              ></div>
         </div>
       {{/each}}
       <div class="button-box">
