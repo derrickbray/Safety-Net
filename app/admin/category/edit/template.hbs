@@ -5,7 +5,7 @@
     {{#simple-form class="card__form" startingValues=model onsubmit=(action "addCategory") as | formValues |}}
       {{input class="form__input" type="text" required=true id="name" value=formValues.name placeholder="Edit Category"}}
       <div class="button-box">
-        <button type="submit" class="btn danger">Delete</button>
+        <button type="button" {{action "deleteCategory" model }}class="btn danger">Delete</button>
         <button type="submit" class="btn">Save</button>
       </div>
     {{/simple-form}}

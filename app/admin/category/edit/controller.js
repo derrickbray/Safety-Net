@@ -17,6 +17,12 @@ export default Ember.Controller.extend({
       } else {
         alert('Sorry, Something Went Wrong. Try Again.');
       }
+    },
+
+    deleteCategory() {
+      const no = this.model;
+      no.destroyRecord();
+      this.transitionToRoute('admin.category');
     }
   }
 });
