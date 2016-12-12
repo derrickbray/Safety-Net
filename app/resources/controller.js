@@ -40,7 +40,7 @@ export default Ember.Controller.extend({
   ],
   popupAnchor: [
     -3, -76
-  ]
+  ],
 
   init() {
     window.navigator.geolocation.getCurrentPosition((position) => {
