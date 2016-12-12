@@ -10,8 +10,6 @@ export default Ember.Controller.extend({
         category.save()
         .then(() => {
           alert('It worked!');
-
-          this.send('reloadData');
         });
       } else {
         alert('It no work!');
