@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
 
   actions: {
     displayMenu() {
-      Ember.getElementsByClassName('nav-right__mobile').style.display = 'block';
-      Ember.getElementsByClassName('nav-right__ex').style.display = 'block';
+      document.getElementsByClassName('nav-right__mobile').style.display = 'block';
+      document.getElementsByClassName('nav-right__ex').style.display = 'block';
     },
     closeMenu() {
-      Ember.getElementsByClassName('nav-right__mobile').style.display = 'none';
-      Ember.getElementsByClassName('nav-right__ex').style.display = 'none';
+      document.getElementsByClassName('nav-right__mobile').style.display = 'none';
+      document.getElementsByClassName('nav-right__ex').style.display = 'none';
     },
   }
 });
