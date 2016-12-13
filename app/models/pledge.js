@@ -4,10 +4,10 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string'),
   contactInfo: DS.attr('string'),
-  endDate: DS.attr('date'),
+  endDate: DS.attr(),
   isApproved: DS.attr('boolean'),
   isClaimed: DS.attr('boolean'),
   user: DS.belongsTo('user'),
 
-  deletedAt: DS.attr('date'),
+  deletedAt: DS.attr(),
 });

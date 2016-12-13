@@ -10,18 +10,18 @@ export default Ember.Controller.extend({
         category.setProperties(formValues);
 
         category.save().then(() => {
-          alert('Your Information was updated!');
+          alert('You added a category! Good job!');
 
           this.transitionToRoute('admin.category');
         });
       } else {
-        alert('Sorry, Something Went Wrong. Try Again.');
+        alert('Oh So Sorry, Something Went Wrong.');
       }
     },
 
     deleteCategory() {
       const no = this.model;
-      if (confirm('are you sure?')) {
+      if (confirm('Are you for real?')) {
         no.destroyRecord();
         this.transitionToRoute('admin.category');
       }

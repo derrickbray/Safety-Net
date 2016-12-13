@@ -11,8 +11,10 @@ export default Ember.Controller.extend({
 
     deleteUser() {
       const no = this.model;
-      no.destroyRecord();
-      this.transitionToRoute('admin.user');
+      if (confirm('Are you for real?')) {
+        no.destroyRecord();
+        this.transitionToRoute('admin.user');
+      }
     }
 
   },

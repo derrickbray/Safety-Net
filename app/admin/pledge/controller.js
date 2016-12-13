@@ -12,9 +12,11 @@ export default Ember.Controller.extend({
 
     deletePledge() {
       const no = this.model;
-      no.destroyRecord();
-      this.transitionToRoute('admin');
+      if (confirm('Are you for real?')) {
+        no.destroyRecord();
+        this.transitionToRoute('admin.pledge');
+      }
     }
 
-  },
+  }
 });

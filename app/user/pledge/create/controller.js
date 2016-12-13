@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 
         pledge.save()
         .then(() => {
-          alert('Your pledge was sent for approval!');
+          alert('Your pledge was sent for approval! Good Luck!');
 
           this.send('reloadData');
         });

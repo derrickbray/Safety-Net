@@ -11,12 +11,12 @@ export default Ember.Controller.extend({
         pledge.setProperties(formValues);
 
         pledge.save().then(() => {
-          alert('Your Information was updated!');
+          alert('You did it! Great Job!');
 
           this.transitionToRoute('admin.pledge.detail');
         });
       } else {
-        alert('Sorry, Something Went Wrong. Try Again.');
+        alert('Oh no, you blew it!');
       }
     }
   }
