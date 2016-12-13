@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
             this.transitionToRoute('admin.user.detail');
           });
         } else {
-          alert('Sorry, I was not paying attention, try again.);
+          alert('Sorry, I was not paying attention. Please try again.');
         }
       });
     },
