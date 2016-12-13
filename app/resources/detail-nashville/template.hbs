@@ -1,12 +1,13 @@
 <div class="main-content__detail">
+  {{#link-to 'resources'}}  <span class="fa fa-times main-content__detail--times"></span>{{/link-to}}
   {{#each model as |value|}}
   <h2>{{value.contact_type}}</h2>
   <h4>{{value.contact}}</h4>
-  <h4>{{value.phone_number}}</h4>
-  <h4>{{value.notes}}</h4>
   <h4>{{value.location_1_zip}}</h4>
   <h4>{{value.location_1_city}}</h4>
   <h4>{{value.location_1_address}}</h4>
+  <h4>{{value.phone_number}}</h4>
+  <h4>{{value.notes}}</h4>
   {{/each}}
 
 </div>
