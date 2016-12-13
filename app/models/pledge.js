@@ -9,5 +9,6 @@ export default DS.Model.extend({
   isClaimed: DS.attr('boolean'),
   user: DS.belongsTo('user'),
 
+  timestamp: DS.attr(),
   deletedAt: DS.attr(),
 });

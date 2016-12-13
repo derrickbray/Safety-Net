@@ -96,6 +96,8 @@
 
 .localcommunity {
       height: 80vh;
+      max-width: 45rem;
+      margin: 0 auto;
 
   &-nonprofit {
     color: $c-emergency;
@@ -113,7 +115,11 @@
 
   &-card {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+
+    &__space-between {
+      justify-content: space-between;
+    }
 
     &--content {
       padding: 0.5rem;
