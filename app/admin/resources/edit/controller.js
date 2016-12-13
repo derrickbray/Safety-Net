@@ -22,12 +22,12 @@ export default Ember.Controller.extend({
         org.setProperties(formValues);
 
         org.save().then(() => {
-          alert('Your Information was updated!');
+          alert('Awesome job on that!');
 
           this.transitionToRoute('admin.resources');
         });
       } else {
-        alert('Sorry, Something Went Wrong. Try Again.');
+        alert('Oh no, we should give up!');
       }
     }
   }

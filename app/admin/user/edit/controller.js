@@ -13,12 +13,12 @@ export default Ember.Controller.extend({
           userInfo.save();
           organization.save()
           .then(() => {
-            alert('Your Information was updated!');
+            alert('You did the thing!');
 
             this.transitionToRoute('admin.user.detail');
           });
         } else {
-          alert('Sorry, Something Went Wrong. Try Again.');
+          alert('Sorry, I was not paying attention, try again.);
         }
       });
     },

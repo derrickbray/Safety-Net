@@ -10,12 +10,12 @@ export default Ember.Controller.extend({
         category.setProperties(formValues);
 
         category.save().then(() => {
-          alert('Your Information was updated!');
+          alert('You added a category! Good job!');
 
           this.transitionToRoute('admin.category');
         });
       } else {
-        alert('Sorry, Something Went Wrong. Try Again.');
+        alert('Oh So Sorry, Something Went Wrong.');
       }
     },
 
