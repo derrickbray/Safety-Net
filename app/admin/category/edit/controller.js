@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
 
     deleteCategory() {
       const no = this.model;
-      if (confirm('are you sure?')) {
+      if (confirm('Are you for real?')) {
         no.destroyRecord();
         this.transitionToRoute('admin.category');
       }
