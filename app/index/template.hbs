@@ -37,9 +37,10 @@
 
       <div class="localcommunity-card">
         <span class="localcommunity-card--content localcommunity-nonprofit">{{ pledge.name}}</span>
-        <span class="localcommunity-card--content localcommunity-posted">{{ pledge.duration }}</span>
+        <span class="localcommunity-card--content localcommunity-posted">post expires</span>
+        <span class="localcommunity-card--content">{{moment-format pledge.endDate "dddd, MMMM Do" }}</span>
       </div>
-      <div class="localcommunity-card">
+      <div class="localcommunity-card localcommunity-card__space-between">
         <span class="localcommunity-card--content">{{ pledge.description }}</span>
         <span class="localcommunity-card--content localcommunity-right">{{ pledge.contactInfo }}</span>
       </div>
