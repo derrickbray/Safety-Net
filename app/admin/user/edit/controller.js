@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   actions: {
     updateForm(formValues) {
+      const flashMessages = this.get('flashMessages');
       const userInfo = this.model;
       this.model.get('organization').then((organization) => {
         if (formValues) {
@@ -13,7 +15,7 @@ export default Ember.Controller.extend({
           userInfo.save();
           organization.save()
           .then(() => {
-            alert('You did the thing!');
+            flashMessages.success('You Changed Stuff!');
 
             this.transitionToRoute('admin.user.detail');
           });

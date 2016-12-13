@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   actions: {
     addPledge(formValues) {
+      const flashMessages = this.get('flashMessages');
       const pledge = this.model;
 
       if (formValues) {
@@ -11,7 +13,7 @@ export default Ember.Controller.extend({
         pledge.setProperties(formValues);
 
         pledge.save().then(() => {
-          alert('You did it! Great Job!');
+          flashMessages.success('You Changed Stuff!');
 
           this.transitionToRoute('admin.pledge.detail');
         });

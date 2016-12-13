@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   actions: {
     toggleCategory(category, { target }) {
       if (target.checked) {
@@ -16,13 +17,13 @@ export default Ember.Controller.extend({
 
     updateResource(formValues) {
       const org = this.model.organization;
-
+      const flashMessages = this.get('flashMessages');
       if (formValues) {
         // Update Properties from the form
         org.setProperties(formValues);
 
         org.save().then(() => {
-          alert('Awesome job on that!');
+          flashMessages.success('You Changed Stuff!');
 
           this.transitionToRoute('admin.resources');
         });

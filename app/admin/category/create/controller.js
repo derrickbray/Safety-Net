@@ -6,13 +6,13 @@ export default Ember.Controller.extend({
 
   actions: {
     addCategory(formValues) {
-      const flashMessages = this.get('flashMessages').add({ message: 'Custom message' });
+      const flashMessages = this.get('flashMessages');
       if (formValues) {
         const category = this.store.createRecord('category', formValues);
         category.set('category', this.model);
 
         category.save().then(() => {
-          flashMessages.success('you did it');
+          flashMessages.success('You Made a New Thing!');
           this.transitionToRoute('admin.category');
         })
        .catch(() => {

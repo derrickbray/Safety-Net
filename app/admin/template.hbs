@@ -1,15 +1,23 @@
 {{#if currentUser.user.isAdmin}}
 
-<div class="hello">You Are In Admin, Enjoy Your Unlimited Power</div>
-<div class="admin-page">
-  <div class="admin-links">
-    {{#link-to "admin.user"}}Users{{/link-to}}
-    {{#link-to "admin.pledge"}}Pledges{{/link-to}}
-    {{#link-to "admin.resources"}}Organizations{{/link-to}}
-    {{#link-to "admin.category" class="flex-grow"}}Categories{{/link-to}}
-  </div>
+  <div class="hello">You Are In Admin, Enjoy Your Unlimited Power</div>
+  <div class="admin-page">
+    <div class="admin-links">
+      {{#link-to "admin.user"}}Users{{/link-to}}
+      {{#link-to "admin.pledge"}}Pledges{{/link-to}}
+      {{#link-to "admin.resources"}}Organizations{{/link-to}}
+      {{#link-to "admin.category" class="flex-grow" }}Categories{{/link-to}}
+    </div>
+    <div class="div">
+      {{#each flashMessages.queue as |flash|}}
+        {{#flash-message flash=flash as |component flash|}}
 
-  <div class="admin__content">{{outlet}}</div>
-</div>
+          <p class="hi">{{flash.message}}</p>
+        {{/flash-message}}
+      {{/each}}
+      <div class="admin__content">{{outlet}}</div>
+    </div>
+
+  </div>
 
 {{/if}}
