@@ -58,10 +58,13 @@
   }
   &-right {
     flex-grow: 1;
+    max-height: 65vh;
+    overflow: scroll;
   }
 }
 
 .admin__title {
+  // position: absolute;
   width: 20rem;
   padding: 1rem;
   text-align: center;
@@ -93,6 +96,7 @@
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
 
   &__title {
+    // position: absolute;
     padding: 1rem;
     background: $c-primary;
     color: $c-text;

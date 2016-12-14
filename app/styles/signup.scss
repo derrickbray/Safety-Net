@@ -1,12 +1,11 @@
 .card {
   margin: auto;
-  width: 50%;
+  margin-top: 11rem;
   display: flex;
   flex-direction: column;
+  width: 50%;
   background: white;
-  // background: $c-secondary;
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
-  margin-top: 11rem;
 
   &__title {
     text-align: center;
@@ -16,8 +15,8 @@
   &__form {
     display: flex;
     flex-direction: column;
-    max-height: 65vh;
-    overflow: scroll;
+    // max-height: 65vh;
+    // overflow: scroll;
   }
 }
 
@@ -33,7 +32,6 @@
 .button-box {
   display: flex;
   justify-content: space-between;
-
   padding: 1rem;
   padding-bottom: 1rem;
 }
