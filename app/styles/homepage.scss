@@ -24,7 +24,7 @@
   text-align: center;
 
   @media(max-width: 764px) {
-    top: 17%;
+    top: 5%;
     font-size: 2rem;
   }
   @media(max-width: 440px) {
@@ -40,7 +40,7 @@
     transform: translate(-50%, -100%);
     background: $c-emergency;
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
-    padding: 1rem 2rem;
+    padding: 1rem;
     color: $c-text;
     font-size: 1.5rem;
 
