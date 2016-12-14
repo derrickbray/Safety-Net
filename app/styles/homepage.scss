@@ -19,38 +19,38 @@
   top: 17%;
   left: 50%;
   transform: translate(-50%, 0);
-  color: $c-text;
+  color: $c-text-secondary;
   font-size: 3rem;
   text-align: center;
 
   @media(max-width: 764px) {
-    top: 25%;
+    top: 5%;
     font-size: 2rem;
   }
   @media(max-width: 440px) {
-    top: 17%;
+    top: 8%;
   }
 
   }
 
   &-button {
     position: absolute;
-    top: 50%;
+    top: 72%;
     left: 50%;
     transform: translate(-50%, -100%);
     background: $c-emergency;
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
-    padding: 1rem 2rem;
+    padding: 1rem;
     color: $c-text;
     font-size: 1.5rem;
 
     @media(max-width: 764px) {
-      top: 65%;
+      top: 70%;
       font-size: 1rem;
     }
 
     @media(max-width: 440px) {
-      top: 50%;
+      // top: 50%;
     }
 
     &:hover {
