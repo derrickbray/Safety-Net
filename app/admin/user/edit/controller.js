@@ -12,13 +12,15 @@ export default Ember.Controller.extend({
           // Update Properties from the form
           userInfo.setProperties(formValues);
 
-          userInfo.save();
+          userInfo.save().then(() => {
+            flashMessages.success('Feel The Power!');
+            this.transitionToRoute('admin.user');
+          });
           organization.save()
 
           .then(() => {
-            flashMessages.success('You Changed Stuff!');
-
-            this.transitionToRoute('admin.user.detail');
+            flashMessages.success('That`s right!');
+            this.transitionToRoute('admin.user');
           });
         } else {
           alert('Sorry, I was not paying attention. Please try again.');

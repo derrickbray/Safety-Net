@@ -12,9 +12,8 @@ export default Ember.Controller.extend({
 
         pledge.save()
         .then(() => {
-          flashMessages.success('Your Pledge Has Been Sent To The Admin.');
-
-          this.send('reloadData');
+          this.send('reloadData')
+          .flashMessages.success('Your Pledge Has Been Sent To The Admin.');
         });
       } else {
         alert('Sorry, Something Went Wrong. Try Again.');
