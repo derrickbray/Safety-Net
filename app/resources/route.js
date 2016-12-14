@@ -1,7 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.findAll('organization');
+  queryParams: {
+    category: {
+      refreshModel: true
+    }
+  },
+  model({ category }) {
+    return this.store.query('organization', {
+      category
+    });
   }
 });
