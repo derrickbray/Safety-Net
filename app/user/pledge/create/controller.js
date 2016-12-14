@@ -10,14 +10,13 @@ export default Ember.Controller.extend({
         const flashMessages = this.get('flashMessages');
         pledge.set('pledge', this.model);
 
-        pledge.save()
-        .then(() => {
-          this.send('reloadData')
-          .flashMessages.success('Your Pledge Has Been Sent To The Admin.');
+        pledge.save().then(() => {
+          flashMessages.success('Your Pledge Has Been Sent To The Admin.');
         });
+        this.transitionToRoute('index');
       } else {
         alert('Sorry, Something Went Wrong. Try Again.');
       }
-    },
-  },
+    }
+  }
 });
