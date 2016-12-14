@@ -1,8 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
+
   actions: {
     addCategory(formValues) {
+      const flashMessages = this.get('flashMessages');
       const category = this.model;
 
       if (formValues) {
@@ -10,7 +14,7 @@ export default Ember.Controller.extend({
         category.setProperties(formValues);
 
         category.save().then(() => {
-          alert('You added a category! Good job!');
+          flashMessages.success('You Changed Stuff!');
 
           this.transitionToRoute('admin.category');
         });

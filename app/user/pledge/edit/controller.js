@@ -2,9 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   actions: {
     addPledge(formValues) {
       const pledge = this.model;
+      const flashMessages = this.get('flashMessages');
       if (formValues) {
         // Update Properties from the form
         pledge.setProperties(formValues);
@@ -13,7 +15,7 @@ export default Ember.Controller.extend({
         // debugger;
         pledge.save()
         .then(() => {
-          alert('Your pledge was updated!');
+          flashMessages.success('You Did The Thing!');
 
           this.transitionToRoute('user.pledge');
         });
