@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
         org.setProperties(formValues);
 
         org.save().then(() => {
-          flashMessages.success('You Changed Stuff!');
+          flashMessages.success('You Did It!');
 
           this.transitionToRoute('admin.resources');
         });

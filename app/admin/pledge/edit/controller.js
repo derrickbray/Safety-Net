@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
         pledge.setProperties(formValues);
 
         pledge.save().then(() => {
-          flashMessages.success('You Changed Stuff!');
+          flashMessages.success('Your Wish Is Granted!');
 
           this.transitionToRoute('admin.pledge.detail');
         });

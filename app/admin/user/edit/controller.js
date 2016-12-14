@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
 
           userInfo.save();
           organization.save()
+
           .then(() => {
             flashMessages.success('You Changed Stuff!');
 

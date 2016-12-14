@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
         category.set('category', this.model);
 
         category.save().then(() => {
-          flashMessages.success('You Made a New Thing!');
+          flashMessages.success('So It Shall Be!');
           this.transitionToRoute('admin.category');
         })
        .catch(() => {
