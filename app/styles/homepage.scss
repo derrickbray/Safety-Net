@@ -1,0 +1,136 @@
+.hero {
+  position: relative;
+
+  &-image {
+    height: 50rem;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+
+    @media(max-width: 764px) {
+      height: 39rem;
+    }
+    @media(max-width: 440px) {
+      height: 40rem;
+    }
+  }
+  &-text {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: $c-text;
+  font-size: 3rem;
+  text-align: center;
+
+  @media(max-width: 764px) {
+    top: 25%;
+    font-size: 2rem;
+  }
+  @media(max-width: 440px) {
+    top: 17%;
+  }
+
+  }
+
+  &-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background: $c-emergency;
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
+    padding: 1rem 2rem;
+    color: $c-text;
+    font-size: 1.5rem;
+
+    @media(max-width: 764px) {
+      top: 65%;
+      font-size: 1rem;
+    }
+
+    @media(max-width: 440px) {
+      top: 50%;
+    }
+
+    &:hover {
+      color: $c-text-tirshary;
+    }
+  }
+}
+
+.category {
+  padding: 1rem;
+  margin-top: 10rem;
+  height: 70vh;
+
+  &-header {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $c-text-secondary;
+  }
+
+    &-dropdown {
+      width: 50%;
+      margin: 0 auto;
+
+    &--text {
+      font-size: 2rem;
+      border: 1px solid $c-text-secondary;
+      color: $c-text-secondary;
+      width: 20rem;
+      text-align: center;
+      margin: auto;
+
+      &__cat {
+        padding: 1rem;
+
+        &:hover {
+          color: $c-text-tirshary;
+        }
+      }
+    }
+}
+}
+
+
+.localcommunity {
+      height: 80vh;
+
+  &-nonprofit {
+    color: $c-emergency;
+
+  }
+  &-posted {
+    color: gray;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: center;
+    color: $c-text-secondary;
+  }
+
+  &-card {
+    display: flex;
+    justify-content: center;
+
+    &--content {
+      padding: 0.5rem;
+    }
+  }
+
+  &-right {
+  display: flex;
+  justify-content: flex-end;
+  color: $c-text-secondary;
+  }
+}
+
+.ember-power-select-trigger{
+  text-align: center;
+//   border-radius: 0;
+//   font-size: 2rem;
+//   width: 60%;
+//   margin: 0 auto;
+}

@@ -1,0 +1,22 @@
+$c-primary: rgba(#0689a6,.72);
+$c-secondary: rgba(#881818,.62);
+$c-emergency: rgba(207, 65, 65, 1.0);
+$c-text: rgba(255, 255, 255, 1.0);
+$c-text-secondary: rgba(169, 171, 173, 1.0);
+$c-text-tirshary: rgba(0, 0, 0, 1.0);
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+// @import 'font-awesome/scss/font-awesome';
+ @import "ember-power-select";
+@import 'reset';
+@import 'navbar';
+@import 'homepage';
+@import 'signup';
+@import 'login';
+@import 'admin';
+@import 'about';
+@import 'er';

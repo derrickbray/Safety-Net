@@ -1,0 +1,23 @@
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">Pledges</div>
+
+    {{#each model as |pledge|}}
+      <div class="admin-side__card">
+        <div class="user-org">{{ pledge.name }}</div>
+        {{!-- <div class="user-org">{{ pledge.user}}</div> --}}
+        <div class="user-pledge">{{ pledge.description }}</div>
+        <div class="user-pledge__end">{{ pledge.contactInfo }}</div>
+        <div class="user-pledge__end">End Date: {{ pledge.endDate }}</div>
+        <div class="user-pledge__end">Approved:{{ pledge.isApproved }}</div>
+        <div class="user-pledge__end">Claimed:{{ pledge.isClaimed }}</div>
+        <div class="button-box">
+          {{#link-to "admin.pledge.detail" pledge class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.pledge.edit" pledge class="btn" }}Edit{{/link-to}}
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+  <div class="grid-right">{{outlet}}</div>
+</div>

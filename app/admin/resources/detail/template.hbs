@@ -1,0 +1,16 @@
+{{outlet}}
+<div class="detail">
+
+  <div class="detail-card">
+    <div class="detail-card__title">Organization Information</div>
+    {{!-- <div class="user-organization user-info">Category:</div> --}}
+    <div class="pledge-detail user-info">Resource: {{ model.name }}</div>
+    <div class="pledge-detail user-info">Address: {{ model.address }}</div>
+    <div class="pledge-detail user-info">Phone #: {{ model.phone }}</div>
+    <div class="pledge-detail user-info">Website: {{ model.website }}</div>
+    <div class="button-box">
+      <button type="button" {{action "deleteOrg" model }} class="btn danger">Delete</button>
+    </div>
+  </div>
+
+</div>

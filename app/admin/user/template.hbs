@@ -1,0 +1,18 @@
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">Users</div>
+
+    {{#each model as |user|}}
+      <div class="admin-side__card">
+        <div class="user-org">{{ user.email }}</div>
+        <div class="button-box">
+          {{#link-to "admin.user.detail" user class="btn" }}Details{{/link-to}}
+          {{#link-to "admin.user.edit" user class="btn" }}Edit{{/link-to}}
+
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+  <div class="grid-right">{{outlet}}</div>
+</div>

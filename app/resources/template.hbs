@@ -1,0 +1,65 @@
+<div class="app">
+  <div class="sidebar">
+    {{#power-select-multiple
+      class="sidebar-dropdown__wrap"
+      options=categoryOptions
+      selected=category
+      placeholder="Choose Category"
+      onchange=(action (mut category))
+      as |name|
+    }}
+      {{name}}
+    {{/power-select-multiple}}
+
+    <h3 class="sidebar-header">Resources Near You</h3>
+    {{#each model as |organization|}}
+      <div class="sidebar-card">
+        <h3 class="sidebar-primary">{{#link-to 'resources.detail-local' organization}}{{ organization.name }}{{/link-to}}</h3>
+        <h4 class="sidebar-secondary">{{ organization.name }}</h4>
+      </div>
+    {{/each}}
+    {{#each nashvilleResources as |nashville|}}
+      <div class="sidebar-card">
+        {{#link-to 'resources.detail-nashville' nashville.phone_number}}
+          <h3 class="sidebar-primary">{{ nashville.contact_type}}</h3>
+          <h4 class="sidebar-secondary">{{ nashville.contact}}</h4>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="main-content">
+    {{#leaflet-map class="leaflet-container leaflet-container__desktop" lat=map.lat lng=map.lng zoom=map.zoom onMoveend=(action "updateCenter")}}
+      {{#if nightMode}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+      {{else}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+      {{/if}}
+
+      {{log (icon iconInfo)}}
+
+      {{#each model as |organization|}}
+        {{#marker-layer location=organization.location icon=(icon iconUrl="/img/logo2.svg" iconAnchor=iconAnchor popupAnchor=popupAnchor shadowUrl="/img/shadow.svg" shadowAnchor=shadowAnchor shadowSize=shadowSize iconSize=iconSize)}}
+          {{#popup-layer}}
+              **Safety Net Certified**
+            <h3>{{ organization.name }}</h3>
+            <h4>{{ organization.phone }}</h4>
+            {{organization.address}}
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/each}}
+
+      {{#each nashvilleResources as |organization|}}
+        {{#marker-layer location=(arr-reverse organization.location_1.coordinates) icon=(icon iconAnchor=iconAnchor popupAnchor=popupAnchor iconUrl="/img/logo2.svg" shadowUrl="/img/shadow.svg" shadowAnchor=shadowAnchor shadowSize=shadowSize iconSize=iconSize)}}
+          {{#popup-layer}}
+          **Nashville Resource**
+            <h3>{{ organization.contact }}</h3>
+            <h4>{{ organization.phone_number }}</h4>
+             {{organization.location_1_address}}
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/each}}
+    {{/leaflet-map}}
+
+    {{outlet}}
+  </div>
+</div>

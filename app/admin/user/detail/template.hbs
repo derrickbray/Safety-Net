@@ -1,0 +1,18 @@
+{{outlet}}
+<div class="detail">
+  <div class="detail-card">
+    <div class="detail-card__title">{{ model.organization.name }}</div>
+    <div class="user-address user-info">User Email: {{ model.email }}</div>
+    <div class="user-org user-info">Website: <a href="http://{{model.organization.website}}">{{ model.organization.website }}</a></div>
+    <div class="user-org user-info">Address: {{ model.organization.address }}</div>
+    <div class="user-org user-info">Phone# {{ model.organization.phone }}</div>
+    <div class="user-address user-info">Admin Status: {{ model.isAdmin }}</div>
+    <div class="user-address user-info">Approval Status: {{ model.isApproved }}</div>
+    <a href="#" class="user-website user-info">{{user.website}}</a>
+    <div class="button-box">
+      <button type="button" {{action "toggleAndSave" "isApproved"}} class="btn">Approve</button>
+      <button type="button" {{action "toggleAndSave" "isAdmin"}} class="btn">Make Admin</button>
+      <button type="button" {{action "deleteUser"}} class="btn danger">Delete</button>
+    </div>
+  </div>
+</div>

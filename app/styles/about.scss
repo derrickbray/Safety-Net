@@ -1,0 +1,18 @@
+.about {
+
+&-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $c-emergency;
+  width: 15%;
+  margin: auto;
+  margin-top: 12rem;
+}
+
+  &-text {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 2rem auto;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="grid">
+  <div class="grid-left">
+    <div class="admin__title">Categories</div>
+    <div class="admin-side__card">
+      {{#link-to "admin.category.create" class="category__link-full" }}Create a New Category{{/link-to}}
+
+      {{#each model as |category|}}
+
+        <div class="category__list">
+          <div class="category__name">{{ category.name }}</div>
+          {{#link-to "admin.category.edit" category class="category__link" }}Edit{{/link-to}}
+        </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+  <div class="grid-right">
+    {{outlet}}
+  </div>
+</div>

@@ -1,0 +1,16 @@
+{{outlet}}
+<div class="detail">
+  <div class="detail-card">
+    <div class="detail-card__title">Edit Pledge</div>
+
+    {{#simple-form class="card__form" startingValues=model onsubmit=(action "addPledge") as | formValues |}}
+      {{input class="form__input" type="text" required=true id="name" value=formValues.name placeholder="Pledge"}}
+      {{input class="form__input" type="text" required=true id="description" value=formValues.description placeholder="Description"}}
+      {{input class="form__input" type="text" required=true id="contactInfo" value=formValues.contactInfo placeholder="Contact Info Website/Email/Phone"}}
+      {{input class="form__input" type="date" required=true id="endDate" value=formValues.endDate placeholder="End Date"}}
+      <div class="button-box">
+        <button type="submit" class="btn">Update</button>
+      </div>
+    {{/simple-form}}
+  </div>
+</div>

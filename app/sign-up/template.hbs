@@ -1,0 +1,20 @@
+{{outlet}}
+<div class="container">
+  <div class="card-page">
+    <div class="card">
+      <div class="card__title">Register Your Non-Profit</div>
+      {{#simple-form class="card__form" onsubmit=(action "saveForm") as | formValues |}}
+        {{input class="form__input" type="text"  value=formValues.name placeholder="Organization Name"}}
+        {{input class="form__input" type="text"  value=formValues.address placeholder="Address"}}
+        {{input class="form__input" type="text"  value=formValues.phone placeholder="Phone #"}}
+        {{input class="form__input" type="text"  value=formValues.website placeholder="Website"}}
+        {{input class="form__input" type="text"  value=formValues.email placeholder="E-Mail"}}
+        {{input class="form__input" type="password"  value=formValues.password placeholder="Password"}}
+        <div class="button-box">
+          {{#link-to "login"}}Already Have an Account?{{/link-to}}
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      {{/simple-form}}
+    </div>
+  </div>
+</div>

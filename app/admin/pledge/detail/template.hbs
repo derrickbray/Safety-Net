@@ -1,0 +1,19 @@
+{{outlet}}
+<div class="detail">
+
+  <div class="detail-card">
+    <div class="detail-card__title">Pledge</div>
+    <div class="user-org user-info">{{ model.name }}</div>
+    <div class="pledge-detail user-info">{{ model.description }}</div>
+    <div class="pledge-end user-info">Contact:{{ model.contactInfo }}</div>
+    <div class="pledge-end user-info">Claimed:{{ model.isClaimed }}</div>
+    <div class="pledge-end user-info">Approved:{{ model.isApproved }}</div>
+    <div class="pledge-end user-info">End Date: {{ model.endDate }}</div>
+    <div class="button-box">
+      <button type="button" {{action "toggleAndSave" model "isClaimed"}} class="btn">Claimed</button>
+      <button type="button" {{action "toggleAndSave" model "isApproved"}} class="btn">Status</button>
+      <button type="button" {{action "deletePledge" model}} class="btn danger">Delete</button>
+    </div>
+  </div>
+
+</div>
