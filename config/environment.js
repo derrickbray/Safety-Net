@@ -1,7 +1,7 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
-  var ENV = {
+module.exports = function (environment) {
+  const ENV = {
     DS: {
       host: 'http://localhost:3333',
       namespace: 'api',
@@ -9,7 +9,7 @@ module.exports = function(environment) {
 
 
     modulePrefix: 'safety-net',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -55,7 +55,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://net-of-safety.herokuapp.com';
   }
 
   ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/api/token-auth`;

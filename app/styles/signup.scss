@@ -1,11 +1,11 @@
 .card {
   margin: auto;
-  width: 50%;
+  margin-top: 11rem;
   display: flex;
   flex-direction: column;
-  background: #ECEFF1;
+  width: 50%;
+  background: white;
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(#000, 0.4);
-  margin-top: 11rem;
 
   &__title {
     text-align: center;
@@ -15,6 +15,8 @@
   &__form {
     display: flex;
     flex-direction: column;
+    // max-height: 65vh;
+    // overflow: scroll;
   }
 }
 
@@ -22,12 +24,16 @@
   margin: 0.2rem;
   padding: 0.3rem;
   outline: none;
+  border: 0;
+  border-bottom: 1px solid #ECEFF1;
+  // background: #ECEFF1;
 }
 
 .button-box {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  padding-bottom: 1rem;
 }
 
 .btn {
@@ -40,8 +46,4 @@
   &:active {
     transform: translate(1px, 1px);
   }
-}
-
-.admin-entry {
-
 }

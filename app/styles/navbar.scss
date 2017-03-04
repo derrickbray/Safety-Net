@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   color: $c-text-secondary;
-  background: $c-text;
+  background: #ECEFF1;
   z-index: 1;
   width: 100%;
 
@@ -67,7 +67,7 @@
       outline: 0;
       cursor: pointer;
       margin-left: 1rem;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       font-size: 2rem;
       color: inherit;
       @media(min-width: 764px) {
